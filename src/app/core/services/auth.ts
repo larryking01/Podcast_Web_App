@@ -3,8 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, throwError, retry } from 'rxjs';
 import { ErrorHanlder } from './error-hanlder';
 import {environment} from '../../../../environments/environment';
-import { AdminCredentials } from '../models/adminCredentials';
-import { AdminLoginResponse } from '../models/adminCredentials';
+import { AdminLoginResponse, AdminSigup, AdminCredentials, AdminSigupResponse } from '../models/adminCredentials';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +25,14 @@ export class Auth {
   logout(): Observable<any> {
     return this.http.post(`${this.baseUrl}v1/logout`, {})
       .pipe(
+        catchError(this.errorHandler.handle) 
+      );
+  }
+  
+  register(signupDetails: AdminSigup): Observable<AdminSigupResponse> {
+    return this.http.post<AdminSigupResponse>(`${this.baseUrl}v1/register`, signupDetails)
+      .pipe(
+        retry(2), 
         catchError(this.errorHandler.handle) 
       );
   }
