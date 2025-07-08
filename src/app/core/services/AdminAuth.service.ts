@@ -14,6 +14,9 @@ export class AdminAuth {
 
   constructor(private http: HttpClient, private errorHandler: ErrorHanlder) { }
 
+  // Admin Authentication Methods
+
+  //admn login
   login(credentials: AdminCredentials): Observable<AdminLoginResponse> {
     return this.http.post<AdminLoginResponse>(`${this.baseUrl}v1/login`, credentials)
       .pipe(
@@ -22,6 +25,7 @@ export class AdminAuth {
       );
   }
 
+  //admin logout
   logout(): Observable<any> {
     return this.http.post(`${this.baseUrl}v1/logout`, {})
       .pipe(
@@ -29,6 +33,8 @@ export class AdminAuth {
       );
   }
   
+
+  //admin signup
   register(signupDetails: AdminSigup): Observable<AdminSigupResponse> {
     return this.http.post<AdminSigupResponse>(`${this.baseUrl}v1/register`, signupDetails)
       .pipe(
