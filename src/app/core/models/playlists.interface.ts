@@ -1,86 +1,60 @@
-export interface Playlists{
-    status: string;
-    data: Array<{
-        id: number;
-        name: string;
-        description: string;
-        created_at: string;
-        updated_at: string;
-    }>;
-    meta: {
-        total: number;
-        page: number;
-        last_page: number;
-    };
+// Interfaces
+export interface Playlist {
+  id: number;
+  name: string;
+  description: string;
+  created_at: string;
+  updated_at: string;
+  episodes?: Episode[];
 }
 
-export interface createPlaylist {
-    name: string;
-    description: string;
+export interface Episode {
+  id: number;
+  title: string;
+  description: string;
+  duration: string;
+  posted_on: string;
+}
+
+export interface PlaylistsResponse {
+  status: string;
+  data: Playlist[];
+  meta: {
+    total: number;
+    page: number;
+    last_page: number;
+  };
 }
 
 export interface PlaylistResponse {
-    status: string;
-    data: {
-        id: number;
-        name: string;
-        description: string;
-        created_at: string;
-        updated_at: string;
-    };
+  status: string;
+  data: Playlist;
 }
 
-export interface addEpisodeToPlaylist {
-    episode_ids: number[];
+export interface CreatePlaylistRequest {
+  name: string;
+  description: string;
 }
 
-export interface PlaylistEpisodeResponse {
-    status: string;
-    message: string;
-    data: {
-        playlist_id: number;
-        added_episode_ids: number[];
-    };
+export interface AddEpisodesRequest {
+  episode_ids: number[];
 }
 
-export interface singlePlaylistResponse{
-    status: string;
-    data: {
-        id: number;
-        name: string;
-        description: string;
-        created_at: string;
-        updated_at: string;
-        episodes: Array<{
-            id: number;
-            title: string;
-            description: string;
-            duration: string;
-            posted_on: string;
-        }>;
-    };
-
+export interface AddEpisodesResponse {
+  status: string;
+  message: string;
+  data: {
+    playlist_id: number;
+    added_episode_ids: number[];
+  };
 }
 
-    export interface EditPlaylist {
-        name: string;
-        description: string;
-    }
-
-export interface EditPlaylistResponse {
-    status: string;
-    data: {
-        id: number;
-        name: string;
-        description: string;
-        created_at: string;
-        updated_at: string;
-    };
+export interface UpdatePlaylistRequest {
+  name: string;
+  description: string;
 }
 
-  export interface DeletPlaylistResponse {
-        name: string;
-        message: string;
-    }
-
-
+export interface DeletePlaylistResponse {
+  status: string;
+  message: string;
+}
