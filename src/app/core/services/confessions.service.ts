@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, throwError, retry } from 'rxjs';
 import { Confession, addConfession, ConfessionResponse, updateConfession } from '../models/confession.interface';
-import { ErrorHanlder } from './error-hanlder';
+import { ErrorHanlder } from './error-hanlder.service';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, throwError, retry } from 'rxjs';
-import { ErrorHanlder } from './error-hanlder';
+import { ErrorHanlder } from './error-hanlder.service';
 import {environment} from '../../../../environments/environment';
 import { AdminLoginResponse, AdminSigup, AdminCredentials, AdminSigupResponse } from '../models/adminCredentials.interface';
 
