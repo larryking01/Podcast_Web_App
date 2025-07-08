@@ -16,9 +16,16 @@ export class Auth {
   constructor(private http: HttpClient, private errorHandler: ErrorHanlder) { }
 
   login(credentials: AdminCredentials): Observable<AdminLoginResponse> {
-    return this.http.post<AdminLoginResponse>(`${this.baseUrl}admin/login`, credentials)
+    return this.http.post<AdminLoginResponse>(`${this.baseUrl}v1/login`, credentials)
       .pipe(
         retry(2), 
+        catchError(this.errorHandler.handle) 
+      );
+  }
+
+  logout(): Observable<any> {
+    return this.http.post(`${this.baseUrl}v1/logout`, {})
+      .pipe(
         catchError(this.errorHandler.handle) 
       );
   }
