@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, throwError, retry } from 'rxjs';
 import { ErrorHanlder } from './error-hanlder';
 import {environment} from '../../../../environments/environment';
-import { AdminLoginResponse, AdminSigup, AdminCredentials, AdminSigupResponse } from '../models/adminCredentials';
+import { AdminLoginResponse, AdminSigup, AdminCredentials, AdminSigupResponse } from '../models/adminCredentials.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Auth {
+export class AdminAuth {
 
   private baseUrl = environment.apiBaseUrl;
 
