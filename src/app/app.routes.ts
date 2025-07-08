@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AdminLogin } from './features/admin/admin-login/admin-login';
 import { Home } from './features/public/home/home';
+import { TeamMembers } from './features/public/team-members/team-members';
 // import { Episodes } from './features/public/episodes/episodes';
 // import { EpisodeDetails } from './features/public/episode-details/episode-details';
 // import { AdminPlaylists } from './features/admin/admin-playlists/admin-playlists';
@@ -13,9 +14,6 @@ import { Home } from './features/public/home/home';
 // import { CreatePlaylist } from './features/admin/admin-playlists/create-playlist/create-playlist';
 // import { EditPlaylist } from './features/admin/admin-playlists/edit-playlist/edit-playlist';
 // import { DeletePlaylist } from './features/admin/admin-playlists/delete-playlist/delete-playlist';
-
-
-
 
 
 
@@ -115,6 +113,10 @@ export const routes: Routes = [
         path: 'playlists',
         loadComponent: () => import('./features/public/playlists/playlists').then( m => m.Playlists),
         title: 'Playlists'
+    },
+    {
+        path: 'team-members',
+        component: TeamMembers,
+        title: 'Meet our team'
     }
-
 ];
