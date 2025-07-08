@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists - Podcat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>🎧 Podcat</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="episodes.html" class="nav-link">Episodes</a></li>
+                <li><a href="playlists.html" class="nav-link active">Playlists</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="confessions.html" class="nav-link">Confessions</a></li>
+                <li><a href="admin-login.html" class="nav-link">Admin</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Podcast Playlists</h1>
+            <p>Curated collections of episodes organized by topic and theme</p>
+        </div>
+    </section>
+
+    <!-- Featured Playlists -->
+    <section class="section">
+        <div class="container">
+            <h2>Featured Playlists</h2>
+            <div class="playlists-featured">
+                <div class="playlist-featured">
+                    <div class="playlist-cover-large">
+                        <img src="https://via.placeholder.com/400x400" alt="Tech Talks">
+                        <div class="playlist-overlay">
+                            <button class="btn-play-featured">▶</button>
+                        </div>
+                    </div>
+                    <div class="playlist-info">
+                        <h3>Tech Talks</h3>
+                        <p class="playlist-description">Dive deep into the world of technology with our curated selection of tech-focused episodes featuring industry experts, innovators, and thought leaders.</p>
+                        <div class="playlist-stats">
+                            <span>8 episodes</span>
+                            <span>•</span>
+                            <span>6h 20m total</span>
+                            <span>•</span>
+                            <span>12.5K plays</span>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="btn btn-primary">▶ Play All</button>
+                            <button class="btn btn-secondary">📱 Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Playlists -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2>All Playlists</h2>
+            <div class="playlists-grid">
+                <!-- Playlist Card -->
+                <div class="playlist-card-detailed">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Business Insights">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <div class="playlist-content">
+                        <h3>Business Insights</h3>
+                        <p>Essential episodes for entrepreneurs and business professionals looking to grow their ventures.</p>
+                        <div class="playlist-meta">
+                            <span>15 episodes</span>
+                            <span>•</span>
+                            <span>12h 30m</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Business</span>
+                            <span class="tag">Entrepreneurship</span>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="btn btn-play">▶ Play</button>
+                            <button class="btn btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist Card -->
+                <div class="playlist-card-detailed">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Creative Corner">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <div class="playlist-content">
+                        <h3>Creative Corner</h3>
+                        <p>Inspiring conversations with artists, designers, and creative professionals sharing their journeys.</p>
+                        <div class="playlist-meta">
+                            <span>12 episodes</span>
+                            <span>•</span>
+                            <span>9h 15m</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Art</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Creativity</span>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="btn btn-play">▶ Play</button>
+                            <button class="btn btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist Card -->
+                <div class="playlist-card-detailed">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Health & Wellness">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <div class="playlist-content">
+                        <h3>Health & Wellness</h3>
+                        <p>Expert advice on physical and mental health, nutrition, fitness, and overall well-being.</p>
+                        <div class="playlist-meta">
+                            <span>10 episodes</span>
+                            <span>•</span>
+                            <span>7h 45m</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Health</span>
+                            <span class="tag">Wellness</span>
+                            <span class="tag">Fitness</span>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="btn btn-play">▶ Play</button>
+                            <button class="btn btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist Card -->
+                <div class="playlist-card-detailed">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Future Trends">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <div class="playlist-content">
+                        <h3>Future Trends</h3>
+                        <p>Exploring emerging trends across industries and their potential impact on society and business.</p>
+                        <div class="playlist-meta">
+                            <span>9 episodes</span>
+                            <span>•</span>
+                            <span>6h 30m</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Trends</span>
+                            <span class="tag">Future</span>
+                            <span class="tag">Innovation</span>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="btn btn-play">▶ Play</button>
+                            <button class="btn btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist Card -->
+                <div class="playlist-card-detailed">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Success Stories">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <div class="playlist-content">
+                        <h3>Success Stories</h3>
+                        <p>Motivational interviews with successful individuals sharing their paths to achievement.</p>
+                        <div class="playlist-meta">
+                            <span>14 episodes</span>
+                            <span>•</span>
+                            <span>11h 20m</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Success</span>
+                            <span class="tag">Motivation</span>
+                            <span class="tag">Leadership</span>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="btn btn-play">▶ Play</button>
+                            <button class="btn btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist Card -->
+                <div class="playlist-card-detailed">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Learning Hub">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <div class="playlist-content">
+                        <h3>Learning Hub</h3>
+                        <p>Educational content covering skills development, career growth, and personal development.</p>
+                        <div class="playlist-meta">
+                            <span>18 episodes</span>
+                            <span>•</span>
+                            <span>15h 10m</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Education</span>
+                            <span class="tag">Skills</span>
+                            <span class="tag">Growth</span>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="btn btn-play">▶ Play</button>
+                            <button class="btn btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Playlist CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Create Your Own Playlist</h2>
+                <p>Organize your favorite episodes into custom playlists for easy listening</p>
+                <button class="btn btn-primary">Create Playlist</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Podcat</h3>
+                    <p>Your favorite podcast destination</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="episodes.html">Episodes</a></li>
+                        <li><a href="playlists.html">Playlists</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Podcat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .playlists-featured {
+            margin-bottom: 4rem;
+        }
+
+        .playlist-featured {
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .playlist-cover-large {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            flex-shrink: 0;
+        }
+
+        .playlist-cover-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .playlist-info {
+            padding: 3rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .playlist-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .playlist-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .playlist-stats {
+            color: #888;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .playlist-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-play-featured {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 107, 53, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .playlist-cover-large:hover .btn-play-featured {
+            opacity: 1;
+        }
+
+        .playlist-card-detailed {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .playlist-card-detailed:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .playlist-content {
+            padding: 1.5rem;
+        }
+
+        .playlist-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .playlist-content p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .playlist-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            color: #666;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .playlist-content .playlist-actions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .playlist-content .btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 4rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-card .btn {
+            background: white;
+            color: #ff6b35;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Dark theme adjustments */
+        body.dark-theme .playlist-featured,
+        body.dark-theme .playlist-card-detailed {
+            background: #2d2d2d;
+            border-color: #444;
+        }
+
+        body.dark-theme .playlist-info h3,
+        body.dark-theme .playlist-content h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .tag {
+            background: #444;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .playlist-featured {
+                flex-direction: column;
+            }
+
+            .playlist-cover-large {
+                width: 100%;
+                height: 300px;
+            }
+
+            .playlist-info {
+                padding: 2rem;
+            }
+
+            .playlist-info h3 {
+                font-size: 2rem;
+            }
+
+            .playlists-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-card {
+                padding: 3rem 2rem;
+            }
+
+            .cta-card h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .playlist-info {
+                padding: 1.5rem;
+            }
+
+            .playlist-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .playlist-actions {
+                flex-direction: column;
+            }
+
+            .playlist-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>

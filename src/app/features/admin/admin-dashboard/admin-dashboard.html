@@ -1,1 +1,147 @@
-<p>admin-dashboard works!</p>
+<article>
+    <header class="admin-header">
+        <div class="admin-nav">
+            <div class="admin-brand">
+                <h1>🎧 Podcat Admin</h1>
+            </div>
+            <div class="admin-user">
+                <span class="user-name">John Admin</span>
+                <div class="user-dropdown">
+                    <button class="user-menu-btn" onclick="toggleUserMenu()">⚙️</button>
+                    <div class="user-dropdown-menu" id="userDropdown">
+                        <a href="#" onclick="showProfile()">Profile</a>
+                        <a href="#" onclick="showSettings()">Settings</a>
+                        <a href="admin-login.html">Logout</a>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li><a href="#dashboard" class="nav-item active" onclick="showSection('dashboard')">📊 Dashboard</a></li>
+                <li><a href="#episodes" class="nav-item" onclick="showSection('episodes')">🎙️ Episodes</a></li>
+                <li><a href="#playlists" class="nav-item" onclick="showSection('playlists')">📝 Playlists</a></li>
+                <li><a href="#confessions" class="nav-item" onclick="showSection('confessions')">💬 Confessions</a></li>
+                <li><a href="#team" class="nav-item" onclick="showSection('team')">👥 Team</a></li>
+                <li><a href="#analytics" class="nav-item" onclick="showSection('analytics')">📈 Analytics</a></li>
+                <li><a href="#settings" class="nav-item" onclick="showSection('settings')">⚙️ Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <main class="admin-main">
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="admin-section active">
+            <div class="section-header">
+                <h2>Dashboard Overview</h2>
+                <div class="header-actions">
+                    <button class="btn btn-primary" onclick="refreshData()">🔄 Refresh</button>
+                    <button class="btn btn-secondary" onclick="exportData()">📊 Export Report</button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🎙️</div>
+                    <div class="stat-content">
+                        <h3>Total Episodes</h3>
+                        <div class="stat-number">42</div>
+                        <div class="stat-change positive">+3 this month</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <h3>Total Listeners</h3>
+                        <div class="stat-number">15.2K</div>
+                        <div class="stat-change positive">+12% this week</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-content">
+                        <h3>Pending Confessions</h3>
+                        <div class="stat-number">8</div>
+                        <div class="stat-change neutral">Review needed</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <h3>Average Rating</h3>
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-change positive">+0.2 this month</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="actions-grid">
+                    <button class="action-card" onclick="showAddEpisode()">
+                        <div class="action-icon">➕</div>
+                        <div class="action-text">Add New Episode</div>
+                    </button>
+                    <button class="action-card" onclick="showSection('confessions')">
+                        <div class="action-icon">✅</div>
+                        <div class="action-text">Review Confessions</div>
+                    </button>
+                    <button class="action-card" onclick="showAnalytics()">
+                        <div class="action-icon">📊</div>
+                        <div class="action-text">View Analytics</div>
+                    </button>
+                    <button class="action-card" onclick="showSettings()">
+                        <div class="action-icon">⚙️</div>
+                        <div class="action-text">Site Settings</div>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">🎙️</div>
+                        <div class="activity-content">
+                            <div class="activity-text">New episode "AI in Everyday Life" published</div>
+                            <div class="activity-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">💬</div>
+                        <div class="activity-content">
+                            <div class="activity-text">3 new confessions submitted for review</div>
+                            <div class="activity-time">4 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">👥</div>
+                        <div class="activity-content">
+                            <div class="activity-text">Sarah Williams profile updated</div>
+                            <div class="activity-time">1 day ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+
+</article>

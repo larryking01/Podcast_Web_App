@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcat - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>🎧 Podcat</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="episodes.html" class="nav-link">Episodes</a></li>
+                <li><a href="playlists.html" class="nav-link">Playlists</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="confessions.html" class="nav-link">Confessions</a></li>
+                <li><a href="admin-login.html" class="nav-link">Admin</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Podcat</h1>
+            <p>Your favorite podcast destination with amazing stories, insightful conversations, and engaging content.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Listen Now</button>
+                <button class="btn btn-secondary">Browse Episodes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Episodes -->
+    <section class="section">
+        <div class="container">
+            <h2>Latest Episodes</h2>
+            <div class="episodes-grid">
+                <div class="episode-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Episode" class="episode-image">
+                    <div class="episode-content">
+                        <h3>Episode 42: The Future of Technology</h3>
+                        <p class="episode-host">Hosted by Alex Johnson</p>
+                        <p class="episode-description">Exploring the latest trends in AI and machine learning...</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">45 min</span>
+                            <span class="episode-date">Dec 15, 2024</span>
+                        </div>
+                        <button class="btn btn-play">▶ Play</button>
+                    </div>
+                </div>
+                
+                <div class="episode-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Episode" class="episode-image">
+                    <div class="episode-content">
+                        <h3>Episode 41: Creative Minds</h3>
+                        <p class="episode-host">Hosted by Sarah Williams</p>
+                        <p class="episode-description">Interview with top designers and artists...</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">38 min</span>
+                            <span class="episode-date">Dec 12, 2024</span>
+                        </div>
+                        <button class="btn btn-play">▶ Play</button>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Episode" class="episode-image">
+                    <div class="episode-content">
+                        <h3>Episode 40: Startup Stories</h3>
+                        <p class="episode-host">Hosted by Mike Chen</p>
+                        <p class="episode-description">Success stories from emerging entrepreneurs...</p>
+                        <div class="episode-meta">
+                            <span class="episode-duration">52 min</span>
+                            <span class="episode-date">Dec 10, 2024</span>
+                        </div>
+                        <button class="btn btn-play">▶ Play</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Playlists -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2>Featured Playlists</h2>
+            <div class="playlists-grid">
+                <div class="playlist-card">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Playlist">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <h3>Tech Talks</h3>
+                    <p>8 episodes • 6h 20m</p>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Playlist">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <h3>Creative Corner</h3>
+                    <p>12 episodes • 9h 15m</p>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="playlist-cover">
+                        <img src="https://via.placeholder.com/250x250" alt="Playlist">
+                        <div class="playlist-overlay">
+                            <button class="btn btn-play-large">▶</button>
+                        </div>
+                    </div>
+                    <h3>Business Insights</h3>
+                    <p>15 episodes • 12h 30m</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Podcat</h3>
+                    <p>Your favorite podcast destination</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="episodes.html">Episodes</a></li>
+                        <li><a href="playlists.html">Playlists</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Podcat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>
