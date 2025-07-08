@@ -1,12 +1,19 @@
 // Interfaces
 export interface Confession {
-  id: number;
-  message: string;
-  category: string;
-  emotion: string;
-  is_approved: boolean;
-  created_at: string;
-  updated_at: string;
+status: string;
+data: {
+    id: number;
+    message: string;
+    category: string;
+    emotion: string;
+    is_approved: string;
+    // Add other properties if present in the objects
+}[];
+meta: {
+    total: number;
+    page: number;
+    last_page: number;
+};
 }
 
 export interface AddConfessionRequest {

@@ -4,10 +4,22 @@ export interface AdminCredentials {
     
 }
 export interface AdminLoginResponse {
-  success: boolean;
+  status: string;
   message: string;
-  token?: string;
-}  
+  data: {
+    token: string;
+    user: {
+      id: number;
+      name: string;
+      email: string;
+      role: string;
+      created_at: string;
+      updated_at: string;
+      email_verified_at: string | null;
+    };
+  };
+}
+
 
 export interface AdminSigup{
 name: string;

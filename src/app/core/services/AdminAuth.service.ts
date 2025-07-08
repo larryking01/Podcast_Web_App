@@ -18,7 +18,7 @@ export class AdminAuth {
 
   //admn login
   login(credentials: AdminCredentials): Observable<AdminLoginResponse> {
-    return this.http.post<AdminLoginResponse>(`${this.baseUrl}v1/login`, credentials)
+    return this.http.post<AdminLoginResponse>(`${this.baseUrl}/v1/login`, credentials)
       .pipe(
         retry(2), 
         catchError(this.errorHandler.handle) 
@@ -36,7 +36,7 @@ export class AdminAuth {
 
   //admin signup
   register(signupDetails: AdminSigup): Observable<AdminSigupResponse> {
-    return this.http.post<AdminSigupResponse>(`${this.baseUrl}v1/register`, signupDetails)
+    return this.http.post<AdminSigupResponse>(`${this.baseUrl}/v1/register`, signupDetails)
       .pipe(
         retry(2), 
         catchError(this.errorHandler.handle) 
