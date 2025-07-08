@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminPlaylists } from './admin-playlists';
+import { EditPlaylist } from './edit-playlist';
 
-describe('AdminPlaylists', () => {
-  let component: AdminPlaylists;
-  let fixture: ComponentFixture<AdminPlaylists>;
+describe('EditPlaylist', () => {
+  let component: EditPlaylist;
+  let fixture: ComponentFixture<EditPlaylist>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminPlaylists]
+      imports: [EditPlaylist]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminPlaylists);
+    fixture = TestBed.createComponent(EditPlaylist);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
