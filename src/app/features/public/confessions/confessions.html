@@ -1,1 +1,160 @@
-<p>confessions works!</p>
+<article>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>🎧 Podcat</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="episodes.html" class="nav-link">Episodes</a></li>
+                <li><a href="playlists.html" class="nav-link">Playlists</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="confessions.html" class="nav-link active">Confessions</a></li>
+                <li><a href="admin-login.html" class="nav-link">Admin</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Anonymous Confessions</h1>
+            <p>Share your story anonymously with our community</p>
+        </div>
+    </section>
+
+
+    <!-- Confession Form -->
+    <section class="section">
+        <div class="container">
+            <div class="confession-form-container">
+                <div class="form-intro">
+                    <h2>Share Your Story</h2>
+                    <p>This is a safe space to share your thoughts, experiences, or confessions anonymously. Your identity will remain completely private, and all submissions are reviewed before being shared with our community.</p>
+                    <div class="privacy-notice">
+                        <h4>🔒 Privacy & Safety</h4>
+                        <ul>
+                            <li>All confessions are completely anonymous</li>
+                            <li>We don't collect any personal information</li>
+                            <li>Content is moderated for safety and appropriateness</li>
+                            <li>You can choose to include an optional title</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <form class="confession-form" onsubmit="submitConfession(event)">
+                    <div class="form-group">
+                        <label for="confession-title">Title (Optional)</label>
+                        <input type="text" id="confession-title" placeholder="Give your confession a title..." maxlength="100">
+                        <small class="form-hint">A short, descriptive title for your confession</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confession-content">Your Confession *</label>
+                        <textarea id="confession-content" placeholder="Share your story, thoughts, or confession here..." rows="8" maxlength="2000" required></textarea>
+                        <small class="form-hint">Maximum 2000 characters. Be respectful and honest.</small>
+                        <div class="character-count">
+                            <span id="char-count">0</span>/2000
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="guidelines">
+                            <h4>Community Guidelines</h4>
+                            <p>Please ensure your confession follows these guidelines:</p>
+                            <ul>
+                                <li>Be respectful and considerate</li>
+                                <li>No hate speech or discriminatory content</li>
+                                <li>No personal information about others</li>
+                                <li>No illegal activities or harmful content</li>
+                                <li>Keep it genuine and honest</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="guidelines-agreement" required>
+                            <span class="checkmark"></span>
+                            I agree to the community guidelines and understand that my confession will be reviewed before publication
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+                        <button type="submit" class="btn btn-primary">Submit Confession</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Recent Confessions -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2>Recent Confessions</h2>
+            <p class="section-subtitle">Read anonymous stories shared by our community members</p>
+            
+            <div class="confessions-list">
+                <!-- Confession Item -->
+                <div class="confession-item">
+                    <div class="confession-header">
+                        <h3>Anonymous</h3>
+                        <span class="confession-date">1 week ago</span>
+                    </div>
+                    <p class="confession-content">
+                        I pretend to understand a lot of things in meetings at work, but honestly, half the time I'm completely lost. The technical jargon goes over my head, but I'm too embarrassed to ask for clarification. I've been teaching myself everything through YouTube and online courses after work.
+                    </p>
+                    <div class="confession-actions">
+                        <button class="reaction-btn">❤️ 267</button>
+                        <button class="reaction-btn">😅 198</button>
+                        <button class="reaction-btn">💪 156</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more">
+                <button class="btn btn-outline">Load More Confessions</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Podcat</h3>
+                    <p>Your favorite podcast destination</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="episodes.html">Episodes</a></li>
+                        <li><a href="playlists.html">Playlists</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Podcat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+</article>
