@@ -2,19 +2,6 @@ import { Routes } from '@angular/router';
 import { AdminLogin } from './features/admin/admin-login/admin-login';
 import { Home } from './features/public/home/home';
 import { TeamMembers } from './features/public/team-members/team-members';
-// import { Episodes } from './features/public/episodes/episodes';
-// import { EpisodeDetails } from './features/public/episode-details/episode-details';
-// import { AdminPlaylists } from './features/admin/admin-playlists/admin-playlists';
-// import { Playlists } from './features/public/playlists/playlists';
-// import { CreateTeam } from './features/admin/admin-team/create/create';
-// import { ViewTeam } from './features/admin/admin-team/view-team/view-team';
-// import { EditTeam } from './features/admin/admin-team/edit-team/edit-team';
-// import { TeamDetails } from './features/admin/admin-team/team-details/team-details';
-// import { ViewPlaylists } from './features/admin/admin-playlists/view-playlists/view-playlists';
-// import { CreatePlaylist } from './features/admin/admin-playlists/create-playlist/create-playlist';
-// import { EditPlaylist } from './features/admin/admin-playlists/edit-playlist/edit-playlist';
-// import { DeletePlaylist } from './features/admin/admin-playlists/delete-playlist/delete-playlist';
-
 
 
 

@@ -247,29 +247,6 @@
     line-height: 1.5;
 }
 
-/* Dark theme adjustments */
-body.dark-theme .team-member,
-body.dark-theme .opportunity {
-    background: #2d2d2d;
-    border-color: #444;
-}
-
-body.dark-theme .member-info h3,
-body.dark-theme .behind-text h3,
-body.dark-theme .join-team h2,
-body.dark-theme .team-intro h2,
-body.dark-theme .behind-scenes h2 {
-    color: #e0e0e0;
-}
-
-body.dark-theme .team-values li {
-    border-color: #444;
-    color: #e0e0e0;
-}
-
-body.dark-theme .member-stats {
-    border-color: #444;
-}
 
 /* Responsive */
 @media (max-width: 768px) {

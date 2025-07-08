@@ -1,0 +1,304 @@
+/* You can add global styles to this file, and also import other style files */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+// /* Hero Section */
+// .hero {
+//     background: linear-gradient(135deg, #ff6b35, #f7931e);
+//     color: white;
+//     padding: 120px 0 80px;
+//     text-align: center;
+//     margin-top: 80px;
+// }
+
+// .hero-content h1 {
+//     font-size: 3.5rem;
+//     margin-bottom: 1rem;
+//     font-weight: 700;
+// }
+
+// .hero-content p {
+//     font-size: 1.3rem;
+//     margin-bottom: 2rem;
+//     opacity: 0.9;
+//     max-width: 600px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+// .hero-buttons {
+//     display: flex;
+//     gap: 1rem;
+//     justify-content: center;
+//     flex-wrap: wrap;
+// }
+
+
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+    color: #ff6b35;
+}
+
+.btn-primary:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #ff6b35;
+}
+
+.btn-play {
+    background: #ff6b35;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-play:hover {
+    background: #e55a2b;
+    transform: scale(1.05);
+}
+
+.btn-play-large {
+    background: rgba(255, 107, 53, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-play-large:hover {
+    background: #ff6b35;
+    transform: scale(1.1);
+}
+
+
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+
+
+// /* Episodes Grid */
+// .episodes-grid {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+//     gap: 2rem;
+// }
+
+// .episode-card {
+//     background: white;
+//     border-radius: 15px;
+//     overflow: hidden;
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+//     transition: transform 0.3s ease, box-shadow 0.3s ease;
+//     border: 1px solid #e0e0e0;
+// }
+
+// .episode-card:hover {
+//     transform: translateY(-5px);
+//     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+// }
+
+// .episode-image {
+//     width: 100%;
+//     height: 200px;
+//     object-fit: cover;
+// }
+
+// .episode-content {
+//     padding: 1.5rem;
+// }
+
+// .episode-content h3 {
+//     font-size: 1.3rem;
+//     margin-bottom: 0.5rem;
+//     color: #333;
+// }
+
+// .episode-host {
+//     color: #ff6b35;
+//     font-weight: 600;
+//     margin-bottom: 0.8rem;
+// }
+
+// .episode-description {
+//     color: #666;
+//     margin-bottom: 1rem;
+//     line-height: 1.5;
+// }
+
+// .episode-meta {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-bottom: 1rem;
+//     font-size: 0.9rem;
+//     color: #888;
+// }
+
+
+
+// /* Playlists Grid */
+// .playlists-grid {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//     gap: 2rem;
+// }
+
+// .playlist-card {
+//     background: white;
+//     border-radius: 15px;
+//     padding: 1.5rem;
+//     text-align: center;
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+//     transition: transform 0.3s ease;
+//     border: 1px solid #e0e0e0;
+// }
+
+// .playlist-card:hover {
+//     transform: translateY(-5px);
+// }
+
+// .playlist-cover {
+//     position: relative;
+//     margin-bottom: 1rem;
+//     border-radius: 10px;
+//     overflow: hidden;
+// }
+
+// .playlist-cover img {
+//     width: 100%;
+//     height: 200px;
+//     object-fit: cover;
+// }
+
+// .playlist-overlay {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: rgba(0, 0, 0, 0.5);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     opacity: 0;
+//     transition: opacity 0.3s ease;
+// }
+
+// .playlist-cover:hover .playlist-overlay {
+//     opacity: 1;
+// }
+
+// .playlist-card h3 {
+//     font-size: 1.2rem;
+//     margin-bottom: 0.5rem;
+//     color: #333;
+// }
+
+// .playlist-card p {
+//     color: #666;
+//     font-size: 0.9rem;
+// }
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+        
+    .episodes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .playlists-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 200px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+            
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+}

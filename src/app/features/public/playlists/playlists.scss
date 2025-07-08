@@ -91,6 +91,71 @@
     opacity: 1;
 }
 
+
+/* Playlists Grid */
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.playlist-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.playlist-card:hover {
+    transform: translateY(-5px);
+}
+
+.playlist-cover {
+    position: relative;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.playlist-cover img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.playlist-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.playlist-cover:hover .playlist-overlay {
+    opacity: 1;
+}
+
+.playlist-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.playlist-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+
 .playlist-card-detailed {
     background: white;
     border-radius: 15px;
@@ -182,22 +247,8 @@
     font-weight: 600;
 }
 
-/* Dark theme adjustments */
-body.dark-theme .playlist-featured,
-body.dark-theme .playlist-card-detailed {
-    background: #2d2d2d;
-    border-color: #444;
-}
 
-body.dark-theme .playlist-info h3,
-body.dark-theme .playlist-content h3 {
-    color: #e0e0e0;
-}
 
-body.dark-theme .tag {
-    background: #444;
-    color: #ccc;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -230,6 +281,9 @@ body.dark-theme .tag {
         font-size: 2rem;
     }
 }
+
+
+
 
 @media (max-width: 480px) {
     .playlist-info {

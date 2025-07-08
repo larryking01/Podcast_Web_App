@@ -229,36 +229,6 @@
     margin-top: 3rem;
 }
 
-/* Dark theme adjustments */
-body.dark-theme .confession-form,
-body.dark-theme .confession-item {
-    background: #2d2d2d;
-    border-color: #444;
-}
-
-body.dark-theme .form-intro h2,
-body.dark-theme .confession-header h3 {
-    color: #e0e0e0;
-}
-
-body.dark-theme .form-group input,
-body.dark-theme .form-group textarea {
-    background: #1a1a1a;
-    border-color: #444;
-    color: #e0e0e0;
-}
-
-body.dark-theme .privacy-notice,
-body.dark-theme .guidelines {
-    background: #333;
-    border-color: #555;
-}
-
-body.dark-theme .reaction-btn {
-    background: #444;
-    border-color: #555;
-    color: #e0e0e0;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
