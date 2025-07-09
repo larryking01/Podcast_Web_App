@@ -32,9 +32,10 @@
                                 </button>
                             </div>
                             <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error-message">
-                                <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
-                                <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+                                <small style="color: red;" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+                                <small style="color: red;" *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
                             </div>
+                           <p *ngIf="logginInProgress">loggin...</p>
                             <p *ngIf="correctCredentials" style="color: red;">Incorrect credentials, try again</p>
                         </div>
 

@@ -19,6 +19,7 @@ export class AdminLogin {
   loginForm!: FormGroup;
   hidePassword = true; 
   correctCredentials = false;
+  logginInProgress = false; 
 
 
   constructor(private fb: FormBuilder, private adminAuth: AdminAuth, private router : Router) {}
@@ -34,18 +35,21 @@ export class AdminLogin {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const credentials: AdminCredentials = this.loginForm.value;
+      this.logginInProgress = true; 
+
       this.adminAuth.login(credentials).subscribe(
         response => {
 
           //successful login response handling
           localStorage.setItem('token', response.data.token); // Store token in localStorage
-          localStorage.setItem('currentUser', response.data.user); //user data
+          localStorage.setItem('currentUser', JSON.stringify(response.data.user)); //user data
 
           this.router.navigate(['/admin/dashboard']);
         },
         error => {
           // error login
          this.correctCredentials = true
+         this.logginInProgress = false;
         }
       );
     } else {
