@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { ErrorHanlder } from './error-hanlder.service';
 
 import { getConfessons, Confession, AddConfessionRequest, ConfessionResponse, GetConfessionResponse, DeleteConfessionResponse, ToggleApprovalResponse } from '../models/confession.interface';
+import { AdminConfessionResponse } from '../models/admin-confession.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,12 @@ export class ConfessionsService {
   constructor(private http: HttpClient, private errorHandler: ErrorHanlder) {}
 
   // GET /v1/confessions?status=approved|pending
-  getConfessions(status?: 'approved' | 'pending'): Observable<getConfessons> {
+  getConfessions(status?: 'approved' | 'pending'): Observable<AdminConfessionResponse> {
     let params = new HttpParams();
     if (status) {
       params = params.set('status', status);
     }
-    return this.http.get<getConfessons>(`${this.baseUrl}/v1/confessions`, { params })
+    return this.http.get<AdminConfessionResponse>(`${this.baseUrl}/v1/confessions`, { params })
       .pipe(
         catchError(this.errorHandler.handle)
       );

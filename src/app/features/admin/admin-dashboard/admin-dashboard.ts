@@ -6,6 +6,7 @@ import { EpisodesService } from '../../../core/services/episodes.service';
 import { EpisodeResponse } from '../../../core/models/episodes.interface';
 import { ConfessionsService } from '../../../core/services/confessions.service';
 import { getConfessons, cofession2 } from '../../../core/models/confession.interface';
+import { AdminConfession, AdminConfessionResponse } from '../../../core/models/admin-confession.interface';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -18,7 +19,7 @@ export class AdminDashboard implements OnInit {
   username: string = '';
   totalEpisodes: number = 0;
   totalConfessions: number = 0;
-  confessions: cofession2[] = [];
+  confessions: AdminConfession[] = [];
 
   constructor(private episodesService: EpisodesService, private confessionservice : ConfessionsService) {}
 
@@ -46,10 +47,10 @@ export class AdminDashboard implements OnInit {
   }
 
 getConfessions(): void {
-  this.confessionservice.getConfessions().subscribe(
-    (response: getConfessons) => {
-      this.confessions = response.data;
-      this.totalConfessions = response.meta?.total ?? 0;
+ this.confessionservice.getConfessions().subscribe(
+   (response: AdminConfessionResponse) => {
+     this.confessions = response.data;
+     this.totalConfessions = response.meta?.total ?? 0;
       
     },
     error => {
