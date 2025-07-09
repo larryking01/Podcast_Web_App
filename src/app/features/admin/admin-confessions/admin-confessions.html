@@ -9,9 +9,9 @@
             <div *ngFor="let confession of confessions" class="confession-card">
                 <p>{{ confession.message }}</p>
                 <div class="metadata">
-                    <span class="category">{{ confession.category }}</span>
-                    <span class="emotion">{{ confession.emotion }}</span>
-                    <span class="status" [ngClass]="{'approved': confession.is_approved === '1', 'pending': confession.is_approved === '0'}">
+                    <span style="color: red;" class="category">{{ confession.category }}</span>
+                    <span style="color:blue" class="emotion">{{ confession.emotion }}</span>
+                    <span style="color:green" class="status" [ngClass]="{'approved': confession.is_approved === '1', 'pending': confession.is_approved === '0'}">
                         {{ confession.is_approved === '1' ? 'Approved' : 'Pending' }}
                     </span>
                     <button (click)="toggleConfessionApproval(confession.id, confession.is_approved)" class="action-button">
