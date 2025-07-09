@@ -36,7 +36,7 @@ export const routes: Routes = [
             },
             {
                 path: 'view-playlists',
-                loadComponent: () => import('./features/admin/admin-playlists/view-playlists/view-playlists').then( m => m.ViewPlaylists ),
+                loadComponent: () => import('./features/admin/admin-playlists/view-playlists/view-playlists').then( m => m.ViewPlaylistsComponent ),
                 title: 'Admin view playlists'
             },
             {
@@ -48,6 +48,11 @@ export const routes: Routes = [
                 path: 'delete-playlists',
                 loadComponent: () => import('./features/admin/admin-playlists/delete-playlist/delete-playlist').then( m => m.DeletePlaylist ),
                 title: 'Admin delete playlists'
+            },
+            {
+                path: ':id', // Route for playlist details
+                loadComponent: () => import('./features/admin/admin-playlists/playlist-detail/playlist-detail.component').then( m => m.PlaylistDetailComponent ),
+                title: 'Playlist Details'
             }
         ]
     },

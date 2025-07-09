@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AdminNavbar } from '../../../shared/components/admin-navbar/admin-navbar';
 import { ConfessionsService } from '../../../core/services/confessions.service';
 import { AdminConfession, AdminConfessionResponse } from '../../../core/models/admin-confession.interface';
-
+import { AdminSidebar } from '../../../shared/components/admin-sidebar/admin-sidebar';
 @Component({
   selector: 'app-admin-confessions',
   standalone: true,

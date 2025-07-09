@@ -1,0 +1,27 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container">
+  <h1>Playlist Details</h1>
+
+  <div *ngIf="isLoading" class="loading-indicator">
+    Loading playlist details...
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <div *ngIf="playlist && !isLoading && !error">
+    <h2>{{ playlist.name }}</h2>
+    <p>{{ playlist.description }}</p>
+    <p>Created At: {{ playlist.created_at | date:'medium' }}</p>
+
+    <h3>Episodes</h3>
+    <ul *ngIf="playlist.episodes && playlist.episodes.length > 0">
+      <li *ngFor="let episode of playlist.episodes">
+        {{ episode.title }} - {{ episode.duration }}
+      </li>
+    </ul>
+    <p *ngIf="!playlist.episodes || playlist.episodes.length === 0">No episodes in this playlist.</p>
+  </div>
+</div>
