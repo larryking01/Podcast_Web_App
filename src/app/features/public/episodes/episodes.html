@@ -32,7 +32,7 @@
             <div class="episodes-list">
                 @for( episode of paginatedEpisodes; track episode.id ) {
                     <!-- Episode Item -->
-                    <div class="episode-item">
+                    <div class="episode-item" (click)="navigateToEpisodeDetails( episode.id )">
                         <img [src]="episode.img_url" alt="Episode" class="episode-thumbnail">
                         <div class="episode-details">
                             <div class="episode-header">

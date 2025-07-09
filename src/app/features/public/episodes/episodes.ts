@@ -1,10 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Footer } from '../../../shared/components/footer/footer';
 import { EpisodeResponse } from '../../../core/models/episodes.interface';
 import { EpisodesService } from '../../../core/services/episodes.service';
 import { Episode } from '../../../core/models/episodes.interface';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+
 
 @Component({
   selector: 'app-episodes',
@@ -25,6 +27,8 @@ export class Episodes implements OnInit {
   }
 
   episodeService = inject( EpisodesService )
+
+  router = inject( Router )
 
   episodesArray: Episode[] = []         // all episodes from API
   paginatedEpisodes: Episode [] = []   // current page items
@@ -58,7 +62,9 @@ export class Episodes implements OnInit {
   }
 
 
-
+  navigateToEpisodeDetails(episodeID: number) {
+    this.router.navigate(['/episodes', episodeID])
+  }
 
 
 }
