@@ -4,7 +4,9 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { ErrorHanlder } from './error-hanlder.service';
 
-import { Confession, AddConfessionRequest, ConfessionResponse, GetConfessionResponse, DeleteConfessionResponse, ToggleApprovalResponse } from '../models/confession.interface';
+import { Confession, AddConfessionRequest, 
+         ConfessionResponse, GetConfessionResponse, 
+         DeleteConfessionResponse, ToggleApprovalResponse } from '../models/confession.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +27,7 @@ export class ConfessionsService {
         catchError(this.errorHandler.handle)
       );
   }
+  
 
   // POST /v1/confessions
   addConfession(confession: AddConfessionRequest): Observable<ConfessionResponse> {
