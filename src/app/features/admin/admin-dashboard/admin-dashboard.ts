@@ -4,6 +4,8 @@ import { AdminNavbar } from '../../../shared/components/admin-navbar/admin-navba
 import { AdminSidebar } from '../../../shared/components/admin-sidebar/admin-sidebar';
 import { EpisodesService } from '../../../core/services/episodes.service';
 import { EpisodeResponse } from '../../../core/models/episodes.interface';
+import { ConfessionsService } from '../../../core/services/confessions.service';
+import { getConfessons, cofession2 } from '../../../core/models/confession.interface';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -14,13 +16,17 @@ import { EpisodeResponse } from '../../../core/models/episodes.interface';
 export class AdminDashboard implements OnInit {
   currentUser: any = null;
   username: string = '';
-  totalEpisodes: number = 0; 
+  totalEpisodes: number = 0;
+  totalConfessions: number = 0;
+  confessions: cofession2[] = [];
 
-  constructor(private episodesService: EpisodesService) {}
+  constructor(private episodesService: EpisodesService, private confessionservice : ConfessionsService) {}
 
   ngOnInit(): void {
     this.getTotalEpisodes();
+    this.getConfessions();
     const currentUserJson = localStorage.getItem('currentUser');
+
     if (currentUserJson) {
       this.currentUser = JSON.parse(currentUserJson);
       this.username = this.currentUser.name;
@@ -31,11 +37,27 @@ export class AdminDashboard implements OnInit {
     this.episodesService.getEpisodes().subscribe(
       (response: EpisodeResponse) => {
         this.totalEpisodes = response.meta?.total ?? 0;
-        console.log("Response",response);
+        
       },
       error => {
         console.error('Error fetching total episodes:', error);
       }
     );
   }
+
+getConfessions(): void {
+  this.confessionservice.getConfessions().subscribe(
+    (response: getConfessons) => {
+      this.confessions = response.data;
+      this.totalConfessions = response.meta?.total ?? 0;
+      console.log("confessions", response);
+    },
+    error => {
+      console.error('Error fetching total confessions:', error);
+    }
+  );
 }
+
+
+  }
+
