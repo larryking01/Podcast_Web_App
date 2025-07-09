@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-navbar',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './admin-navbar.scss'
 })
 export class AdminNavbar {
+
+  @Input() name: string = '';
 
 }

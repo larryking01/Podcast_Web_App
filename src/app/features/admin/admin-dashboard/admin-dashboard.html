@@ -1,6 +1,6 @@
 <article>
     <!-- admin navbar -->
-    <app-admin-navbar />
+    <app-admin-navbar name="{{username}}"/>
 
     <!-- Admin Sidebar -->
     <app-admin-sidebar />
@@ -9,10 +9,9 @@
         <!-- Dashboard Section -->
         <section id="dashboard-section" class="admin-section active">
             <div class="section-header">
-                <h2>Dashboard Overview</h2>
+                <h2>Welcome, {{ username }}!</h2>
                 <div class="header-actions">
-                    <button class="btn btn-primary" onclick="refreshData()">🔄 Refresh</button>
-                    <button class="btn btn-secondary" onclick="exportData()">📊 Export Report</button>
+                  
                 </div>
             </div>
 
