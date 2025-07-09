@@ -7,7 +7,13 @@ import { Component, Input } from '@angular/core';
   styleUrl: './admin-navbar.scss'
 })
 export class AdminNavbar {
-
-  @Input() name: string = '';
+username: string = '';
+ ngOnInit(): void {
+    const currentUserJson = localStorage.getItem('currentUser');
+    if (currentUserJson) {
+      const currentUser = JSON.parse(currentUserJson);
+      this.username = currentUser.name;
+    }
+  }
 
 }

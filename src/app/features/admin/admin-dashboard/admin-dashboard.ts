@@ -50,7 +50,7 @@ getConfessions(): void {
     (response: getConfessons) => {
       this.confessions = response.data;
       this.totalConfessions = response.meta?.total ?? 0;
-      console.log("confessions", response);
+      
     },
     error => {
       console.error('Error fetching total confessions:', error);
