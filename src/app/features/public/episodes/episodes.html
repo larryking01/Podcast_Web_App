@@ -20,13 +20,6 @@
                     <input type="text" placeholder="Search episodes..." class="search-input">
                     <button class="search-btn">🔍</button>
                 </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active">All</button>
-                    <button class="filter-btn">Technology</button>
-                    <button class="filter-btn">Business</button>
-                    <button class="filter-btn">Creative</button>
-                    <button class="filter-btn">Health</button>
-                </div>
             </div>
         </div>
     </section>
@@ -35,41 +28,46 @@
     <!-- Episodes List -->
     <section class="episodes-section">
         <div class="container">
+            @if( paginatedEpisodes.length > 0 ) {
             <div class="episodes-list">
-
-                <!-- Episode Item -->
-                <div class="episode-item">
-                    <img src="https://via.placeholder.com/120x120" alt="Episode" class="episode-thumbnail">
-                    <div class="episode-details">
-                        <div class="episode-header">
-                            <h3>Episode 41: Creative Minds</h3>
-                            <span class="episode-category">Creative</span>
-                        </div>
-                        <p class="episode-host">Hosted by Sarah Williams</p>
-                        <p class="episode-description">Join us for an inspiring conversation with top designers and artists about the creative process, finding inspiration, and building a sustainable creative career...</p>
-                        <div class="episode-meta">
-                            <span class="episode-duration">🕒 38 minutes</span>
-                            <span class="episode-date">📅 December 12, 2024</span>
-                            <span class="episode-plays">👥 980 plays</span>
-                        </div>
-                        <div class="episode-actions">
-                            <button class="btn btn-play">▶ Play Now</button>
-                            <button class="btn btn-secondary">📱 Download</button>
-                            <button class="btn btn-outline">❤️ Save</button>
+                @for( episode of paginatedEpisodes; track episode.id ) {
+                    <!-- Episode Item -->
+                    <div class="episode-item">
+                        <img [src]="episode.img_url" alt="Episode" class="episode-thumbnail">
+                        <div class="episode-details">
+                            <div class="episode-header">
+                                <h3>Episode {{ episode.id }}: {{ episode.title }}</h3>
+                                <span class="episode-category">Season: {{ episode.season }}</span>
+                            </div>
+                            <!-- <p class="episode-host">Hosted by Sarah Williams</p> -->
+                            <p class="episode-description">{{ episode.description }}</p>
+                            <div class="episode-meta">
+                                <span class="episode-duration">🕒 {{ episode.duration }}</span>
+                                <span class="episode-date">📅 {{ episode.posted_on }}</span>
+                                <!-- <span class="episode-plays">👥 980 plays</span> -->
+                            </div>
+                            <div class="episode-actions">
+                                <button class="btn btn-play">▶ Play Now</button>
+                                <button class="btn btn-play">Details</button>
+                                <!-- <button class="btn btn-secondary">📱 Download</button>
+                                <button class="btn btn-outline">❤️ Save</button> -->
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
+
+                <mat-paginator 
+                    [length]="episodesArray.length"
+                    [pageSize]="pageSize"
+                    [pageSizeOptions]="[5, 10, 20]"
+                    (page)="onPageChange($event)"
+                >
+                </mat-paginator>
+
             </div>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <button class="pagination-btn disabled">« Previous</button>
-                <button class="pagination-btn active">1</button>
-                <button class="pagination-btn">2</button>
-                <button class="pagination-btn">3</button>
-                <button class="pagination-btn">4</button>
-                <button class="pagination-btn">Next »</button>
-            </div>
+             }
+
         </div>
     </section>
 

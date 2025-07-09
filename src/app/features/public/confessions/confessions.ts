@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Footer } from '../../../shared/components/footer/footer';
 import { ConfessionsService } from '../../../core/services/confessions.service';
-import { AddConfessionRequest, Confession, ConfessionResponse } from '../../../core/models/confession.interface';
+import { AddConfessionRequest, ConfessionResponse } from '../../../core/models/confession.interface';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
