@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+// import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Footer } from '../../../shared/components/footer/footer';
 import { RouterModule } from '@angular/router';
@@ -9,6 +10,11 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
-export class Home {
+export class Home implements OnInit {
+
+
+  ngOnInit(): void {
+    
+  }
 
 }
