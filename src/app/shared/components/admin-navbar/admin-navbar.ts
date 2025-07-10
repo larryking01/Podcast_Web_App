@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin-navbar',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './admin-navbar.html',
   styleUrl: './admin-navbar.scss'
 })
