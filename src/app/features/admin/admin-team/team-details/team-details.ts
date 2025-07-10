@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { AdminNavbar } from '../../../../shared/components/admin-navbar/admin-navbar'; // Using the provided import
 import { TeamMember, TeamMemberResponse } from '../../../../core/models/team-members.interface';
 import { TeamMembersService } from '../../../../core/services/team-members.service';
 import { CommonModule } from '@angular/common';
-import { AdminNavbar } from '../../../../shared/components/admin-navbar/admin-navbar';
 @Component({
   selector: 'app-team-details',
-  imports: [CommonModule, AdminNavbar],
+  imports: [RouterModule, AdminNavbar, CommonModule], // Added AdminNavbar here
   templateUrl: './team-details.html',
   styleUrl: './team-details.scss'
 })
