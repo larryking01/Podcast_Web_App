@@ -30,20 +30,34 @@
                     </div>
                 </div>
 
-                <form class="confession-form" onsubmit="submitConfession(event)">
+                <form class="confession-form" [formGroup]="confessionForm" (ngSubmit)="submitConfession()">
                     <div class="form-group">
-                        <label for="confession-title">Title (Optional)</label>
-                        <input type="text" id="confession-title" placeholder="Give your confession a title..." maxlength="100">
-                        <small class="form-hint">A short, descriptive title for your confession</small>
+                        <label for="confession-title">Category</label>
+                        <select formControlName="category">
+                            @for( category of confessionCategories; track $index ) {
+                                <option [value]="category">{{ category }}</option>
+                            }
+                        </select>
+                        <!-- <input type="text" id="confession-title" placeholder="Give your confession a title..." maxlength="100"> -->
+                        <small class="form-hint">A descriptive category for your confession</small>
                     </div>
 
                     <div class="form-group">
                         <label for="confession-content">Your Confession *</label>
-                        <textarea id="confession-content" placeholder="Share your story, thoughts, or confession here..." rows="8" maxlength="2000" required></textarea>
+                        <textarea id="confession-content" formControlName="message" placeholder="Share your story, thoughts, or confession here..." rows="8" maxlength="2000" required></textarea>
                         <small class="form-hint">Maximum 2000 characters. Be respectful and honest.</small>
                         <div class="character-count">
                             <span id="char-count">0</span>/2000
                         </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confession-content">Emotion*</label>
+                        <select formControlName="emotion">
+                            @for( emotion of emotions; track emotion ) {
+                                <option [value]="emotion">{{ emotion }}</option>
+                            }
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -60,16 +74,16 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="checkbox-container">
                             <input type="checkbox" id="guidelines-agreement" required>
                             <span class="checkmark"></span>
                             I agree to the community guidelines and understand that my confession will be reviewed before publication
                         </label>
-                    </div>
+                    </div> -->
 
                     <div class="form-actions">
-                        <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+                        <!-- <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button> -->
                         <button type="submit" class="btn btn-primary">Submit Confession</button>
                     </div>
                 </form>

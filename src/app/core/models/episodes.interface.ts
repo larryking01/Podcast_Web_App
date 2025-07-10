@@ -28,7 +28,8 @@ export interface EpisodeMeta {
 
 export interface EpisodeResponse {
   status: string;
-  data: Episode | Episode[];
+  // data: Episode | Episode[];
+  data: Episode [];
   meta?: EpisodeMeta;
   message?: string;
 }
