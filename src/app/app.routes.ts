@@ -115,5 +115,16 @@ export const routes: Routes = [
         path: 'team-members',
         component: TeamMembers,
         title: 'Meet our team'
+    },
+    {
+        path: '**',
+        loadComponent: () => import('./features/public/not-found/not-found.component').then( m => m.NotFoundComponent ),
+        title: 'Page Not Found'
+    },
+    
+    {
+        path: '**',
+        loadComponent: () => import('./features/public/not-found/not-found.component').then( m => m.NotFoundComponent ),
+        title: 'Page Not Found'
     }
 ];
