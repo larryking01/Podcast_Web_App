@@ -16,6 +16,16 @@ meta: {
 };
 }
 
+export interface getConfessons{
+  status: string;
+  data: cofession2[];
+  meta: {
+    page: number;
+    last_page: number;
+    total: number;
+  };
+}
+
 export interface AddConfessionRequest {
   message: string;
   category: string;
@@ -49,4 +59,12 @@ export interface ToggleApprovalResponse {
     content: string;
     is_approved: boolean;
   };
+}
+
+export interface cofession2{
+   id: number;
+  title: string;
+  description: string;
+  img_url: string;
+  audio_url: string;
 }

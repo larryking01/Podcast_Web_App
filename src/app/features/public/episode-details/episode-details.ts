@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Footer } from '../../../shared/components/footer/footer';
 import { Navbar } from '../../../shared/components/navbar/navbar';
+import { EpisodesService } from '../../../core/services/episodes.service';
 
 @Component({
   selector: 'app-episode-details',
@@ -8,6 +9,14 @@ import { Navbar } from '../../../shared/components/navbar/navbar';
   templateUrl: './episode-details.html',
   styleUrl: './episode-details.scss'
 })
-export class EpisodeDetails {
+export class EpisodeDetails implements OnInit {
+
+  episodesService = inject( EpisodesService )
+
+
+  ngOnInit(): void {
+    
+  }
+
 
 }

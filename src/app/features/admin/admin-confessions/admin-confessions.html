@@ -1,22 +1,31 @@
-<article>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1>🎧 Podcat</h1>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="episodes.html" class="nav-link">Episodes</a></li>
-                <li><a href="playlists.html" class="nav-link">Playlists</a></li>
-                <li><a href="team.html" class="nav-link">Team</a></li>
-                <li><a href="confessions.html" class="nav-link active">Confessions</a></li>
-                <li><a href="admin-login.html" class="nav-link">Admin</a></li>
-            </ul>
-            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+<app-admin-navbar></app-admin-navbar>
+
+<section class="confessions-section">
+  <div class="confessions-content-wrapper">
+    <h2>Anonymous Confessions</h2>
+
+    <div class="confession-grid">
+      <div *ngFor="let confession of confessions" class="confession-card">
+        <p class="message">{{ confession.message }}</p>
+
+        <div class="metadata">
+          <span class="category">{{ confession.category }}</span>
+          <span class="emotion">{{ confession.emotion }}</span>
+          <span class="status" [ngClass]="{
+              'approved': confession.is_approved === '1',
+              'pending': confession.is_approved === '0'
+            }">
+            {{ confession.is_approved === '1' ? 'Approved' : 'Pending' }}
+          </span>
+
+          <button
+            class="action-button"
+            (click)="toggleConfessionApproval(confession.id, confession.is_approved)"
+          >
+            {{ confession.is_approved === '1' ? 'Reject' : 'Approve' }}
+          </button>
         </div>
-    </nav>
-
-
-
-</article>
+      </div>
+    </div>
+  </div>
+</section>

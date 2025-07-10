@@ -1,0 +1,103 @@
+.confessions-section {
+  padding: 3rem 1rem;
+  background: linear-gradient(to right, #f7f9fc20, #eef3fc);
+  min-height: 100vh;
+  margin-top: 80px;
+}
+
+.confessions-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.confessions-content-wrapper h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+/* Responsive Grid Layout */
+.confession-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Confession Card */
+.confession-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.confession-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.confession-card .message {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Metadata Area */
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Category and Emotion Tags */
+.category {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.emotion {
+  color: #3498db;
+  font-weight: 600;
+}
+
+/* Status Pill */
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.status.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Action Button */
+.action-button {
+  margin-left: auto;
+  background: linear-gradient(to right, #00c853, #43a047);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.action-button:hover {
+  background: linear-gradient(to right, #00b140, #388e3c);
+}

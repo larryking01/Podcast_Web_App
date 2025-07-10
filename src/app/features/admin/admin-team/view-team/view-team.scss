@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  padding: 2rem;
+  background: #f7f9fc;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Heading */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.btn.btn-primary {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn.btn-primary:hover {
+  background: linear-gradient(to right, #0056b3, #00aaff);
+}
+
+/* Grid Layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Styling */
+.team-member-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.team-member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Profile Image */
+.profile-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 4px solid #e0ecff;
+}
+
+/* Text */
+.team-member-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.role,
+.bio {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+/* Social Media */
+.social-links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.social-links ul {
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  list-style: none;
+}
+
+.social-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Empty State */
+.no-members-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 3rem;
+}

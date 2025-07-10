@@ -1,1 +1,50 @@
-<p>create works!</p>
+<app-admin-navbar></app-admin-navbar>
+
+<h2>Create New Team Member</h2>
+
+<form [formGroup]="teamMemberForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="name" class="form-control" required>
+    <div *ngIf="teamMemberForm.get('name')?.invalid && (teamMemberForm.get('name')?.dirty || teamMemberForm.get('name')?.touched)" class="error-message">
+      Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="role">Role:</label>
+    <input id="role" type="text" formControlName="role" class="form-control" required>
+    <div *ngIf="teamMemberForm.get('role')?.invalid && (teamMemberForm.get('role')?.dirty || teamMemberForm.get('role')?.touched)" class="error-message">
+      Role is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="bio">Bio:</label>
+    <textarea id="bio" formControlName="bio" class="form-control" required></textarea>
+    <div *ngIf="teamMemberForm.get('bio')?.invalid && (teamMemberForm.get('bio')?.dirty || teamMemberForm.get('bio')?.touched)" class="error-message">
+      Bio is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="profile_image">Profile Image URL:</label>
+    <input id="profile_image" type="text" formControlName="profile_image" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="social_media_links">Social Media Link (e.g., Twitter URL):</label>
+    <input id="social_media_links" type="text" formControlName="social_media_links" class="form-control">
+    <!-- Note: For multiple social media links, a more complex form array would be needed -->
+  </div>
+
+  <!-- Server-side error messages -->
+  <div *ngIf="serverErrorMessages.length > 0" class="server-errors">
+    <h4>Errors:</h4>
+    <ul>
+      <li *ngFor="let error of serverErrorMessages">{{ error }}</li>
+    </ul>
+  </div>
+
+  <button type="submit" [disabled]="teamMemberForm.invalid">Add Team Member</button>
+</form>

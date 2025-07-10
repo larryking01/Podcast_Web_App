@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth-guard';
 import { AdminLogin } from './features/admin/admin-login/admin-login';
 import { Home } from './features/public/home/home';
 import { TeamMembers } from './features/public/team-members/team-members';
@@ -17,17 +18,20 @@ export const routes: Routes = [
         title: 'Admin Login'
     }, 
         {
-        path: 'admin/dashboard',
-        loadComponent: () => import('./features/admin/admin-dashboard/admin-dashboard').then( m => m.AdminDashboard ),
-        title: 'Admin dashboard'
-    },
+            path: 'admin/dashboard',
+            loadComponent: () => import('./features/admin/admin-dashboard/admin-dashboard').then( m => m.AdminDashboard ),
+            title: 'Admin dashboard',
+            canActivate: [authGuard]
+        },
     {
         path: 'admin/confessions',
         loadComponent: () => import('./features/admin/admin-confessions/admin-confessions').then( m => m.AdminConfessions ),
-        title: 'Admin view all confessions'
+        title: 'Admin view all confessions',
+        canActivate: [authGuard]
     },
     {
         path: 'admin/playlists',
+        canActivate: [authGuard],
         children: [
             {
                 path: 'create-playlists',
@@ -36,7 +40,7 @@ export const routes: Routes = [
             },
             {
                 path: 'view-playlists',
-                loadComponent: () => import('./features/admin/admin-playlists/view-playlists/view-playlists').then( m => m.ViewPlaylists ),
+                loadComponent: () => import('./features/admin/admin-playlists/view-playlists/view-playlists').then( m => m.ViewPlaylistsComponent ),
                 title: 'Admin view playlists'
             },
             {
@@ -48,11 +52,17 @@ export const routes: Routes = [
                 path: 'delete-playlists',
                 loadComponent: () => import('./features/admin/admin-playlists/delete-playlist/delete-playlist').then( m => m.DeletePlaylist ),
                 title: 'Admin delete playlists'
+            },
+            {
+                path: ':id', // Route for playlist details
+                loadComponent: () => import('./features/admin/admin-playlists/playlist-detail/playlist-detail.component').then( m => m.PlaylistDetailComponent ),
+                title: 'Playlist Details'
             }
         ]
     },
     {
         path: 'admin',
+        canActivate: [authGuard],
         children: [
             {
                 path: 'team',

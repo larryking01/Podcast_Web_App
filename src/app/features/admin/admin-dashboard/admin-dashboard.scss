@@ -3,6 +3,7 @@
     margin-top: 70px;
     padding: 2rem;
     min-height: calc(100vh - 70px);
+    color: #848383;
 }
 
 .admin-section {
@@ -21,7 +22,7 @@
 }
 
 .section-header h2 {
-    color: #333;
+    color: #848383;
     font-size: 2rem;
     margin: 0;
 }
@@ -190,6 +191,7 @@
 
 
 
+
 /* Button Styles */
 .btn {
     padding: 10px 20px;
@@ -253,6 +255,7 @@
 
 
 
+
 /* Responsive */
 @media (max-width: 768px) {
     .admin-main {
@@ -273,4 +276,56 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+}
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #1a1a1a; /* Dark background */
+    /* Removed general color property to avoid overriding h2 */
+}
+
+body.dark-theme .admin-header {
+    background: #2a2a2a; /* Darker header background */
+    border-bottom: 1px solid #444;
+}
+
+body.dark-theme .admin-brand h1 {
+    color: #ff6b35; /* Keep brand color or adjust if needed */
+}
+
+body.dark-theme .admin-user .user-name {
+    color: #f0f0f0; /* Light username color */
+}
+
+body.dark-theme .user-dropdown-menu {
+    background: #2a2a2a; /* Dark dropdown background */
+    border: 1px solid #444;
+}
+
+body.dark-theme .user-dropdown-menu a {
+    color: #f0f0f0; /* Light dropdown link color */
+    border-bottom: 1px solid #444;
+}
+
+body.dark-theme .user-dropdown-menu a:hover {
+    background: #3a3a3a; /* Darker hover background */
+}
+/* Specific fix for h2 color in dark mode */
+body.dark-theme .section h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
+}
+/* Corrected h2 color for dark mode */
+body.dark-theme .section h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
+}
+/* Final attempt to fix h2 color in dark mode */
+body.dark-theme .section-header h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
+}
+/* Final attempt to fix h2 color in dark mode */
+body.dark-theme .section-header h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
+}
+/* Final attempt to fix h2 color in dark mode */
+body.dark-theme app-admin-dashboard .section-header h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
 }

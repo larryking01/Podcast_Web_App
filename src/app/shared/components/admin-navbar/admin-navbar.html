@@ -1,19 +1,22 @@
 <header class="admin-header">
     <div class="admin-nav">
         <div class="admin-brand">
-            <h1>🎧 Podcat Admin</h1>
+            <h1 style="cursor: pointer;" routerLink="/admin/dashboard">🎧 Podcat Admin</h1>
         </div>
         <div class="admin-user">
-            <span class="user-name">John Admin</span>
+            <span class="user-name" style="cursor: pointer;">{{username}}</span>
             <div class="user-dropdown">
-                <button class="user-menu-btn" onclick="toggleUserMenu()">⚙️</button>
+                
                 <div class="user-dropdown-menu" id="userDropdown">
                     <a href="#" onclick="showProfile()">Profile</a>
                     <a href="#" onclick="showSettings()">Settings</a>
                     <a href="admin-login.html">Logout</a>
                 </div>
             </div>
-            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            <button class="theme-toggle" (click)="toggleTheme()">
+                <span *ngIf="!isDarkMode">🌙</span>
+                <span *ngIf="isDarkMode">☀️</span>
+            </button>
         </div>
     </div>
 </header>

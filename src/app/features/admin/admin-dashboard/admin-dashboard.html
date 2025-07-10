@@ -9,10 +9,9 @@
         <!-- Dashboard Section -->
         <section id="dashboard-section" class="admin-section active">
             <div class="section-header">
-                <h2>Dashboard Overview</h2>
+                <h2>Welcome, {{ username }}!</h2>
                 <div class="header-actions">
-                    <button class="btn btn-primary" onclick="refreshData()">🔄 Refresh</button>
-                    <button class="btn btn-secondary" onclick="exportData()">📊 Export Report</button>
+                  
                 </div>
             </div>
 
@@ -22,7 +21,7 @@
                     <div class="stat-icon">🎙️</div>
                     <div class="stat-content">
                         <h3>Total Episodes</h3>
-                        <div class="stat-number">42</div>
+                        <div class="stat-number">{{ totalEpisodes }}</div>
                         <div class="stat-change positive">+3 this month</div>
                     </div>
                 </div>
@@ -40,7 +39,7 @@
                     <div class="stat-icon">💬</div>
                     <div class="stat-content">
                         <h3>Pending Confessions</h3>
-                        <div class="stat-number">8</div>
+                        <div class="stat-number">{{totalConfessions}}</div>
                         <div class="stat-change neutral">Review needed</div>
                     </div>
                 </div>
@@ -58,7 +57,7 @@
 
             <!-- Quick Actions -->
             <div class="quick-actions">
-                <h3>Quick Actions</h3>
+                <h3 style="color: #848383;;">Quick Actions</h3>
                 <div class="actions-grid">
                     <button class="action-card" onclick="showAddEpisode()">
                         <div class="action-icon">➕</div>

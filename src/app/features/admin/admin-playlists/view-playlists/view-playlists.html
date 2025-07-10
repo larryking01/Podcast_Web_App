@@ -1,1 +1,30 @@
-<p>view-playlists works!</p>
+<app-admin-navbar></app-admin-navbar>
+
+<div class="playlist-list-container">
+  <div class="header">
+    <h1>Playlists</h1>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-indicator">
+    Loading playlists...
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!isLoading && !error" class="playlist-grid">
+    <div class="playlist-card" *ngFor="let playlist of playlists">
+      <img [src]="'https://picsum.photos/seed/' + playlist.id + '/400/200'" alt="Playlist Image" class="playlist-image" />
+      <div class="playlist-content">
+        <h2>
+          <a [routerLink]="['/admin/playlists', playlist.id]">
+            {{ playlist.name }}
+          </a>
+        </h2>
+        <p class="description">{{ playlist.description }}</p>
+        <p class="created-at">Created At: {{ playlist.created_at | date:'medium' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
