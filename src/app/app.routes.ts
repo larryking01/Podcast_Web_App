@@ -8,7 +8,7 @@ import { TeamMembers } from './features/public/team-members/team-members';
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'admin',
         component: Home,
         title: 'Home'
     },
