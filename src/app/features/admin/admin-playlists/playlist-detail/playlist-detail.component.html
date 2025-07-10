@@ -1,8 +1,6 @@
 <app-admin-navbar></app-admin-navbar>
 
-<div class="container">
-  <h1>Playlist Details</h1>
-
+<div class="playlist-container">
   <div *ngIf="isLoading" class="loading-indicator">
     Loading playlist details...
   </div>
@@ -11,17 +9,26 @@
     {{ error }}
   </div>
 
-  <div *ngIf="playlist && !isLoading && !error">
-    <h2>{{ playlist.name }}</h2>
-    <p>{{ playlist.description }}</p>
-    <p>Created At: {{ playlist.created_at | date:'medium' }}</p>
+  <div *ngIf="playlist && !isLoading && !error" class="playlist-card">
+    <div class="playlist-header">
+      <img src="https://picsum.photos/400/200?random=1" alt="Playlist Cover" class="playlist-image" />
+      <div class="playlist-info">
+        <h1>{{ playlist.name }}</h1>
+        <p class="description">{{ playlist.description }}</p>
+        <p class="created-at">Created At: {{ playlist.created_at | date:'medium' }}</p>
+      </div>
+    </div>
 
-    <h3>Episodes</h3>
-    <ul *ngIf="playlist.episodes && playlist.episodes.length > 0">
-      <li *ngFor="let episode of playlist.episodes">
-        {{ episode.title }} - {{ episode.duration }}
-      </li>
-    </ul>
-    <p *ngIf="!playlist.episodes || playlist.episodes.length === 0">No episodes in this playlist.</p>
+    <div class="playlist-episodes">
+      <h3>Episodes</h3>
+      <ul *ngIf="playlist.episodes && playlist.episodes.length > 0">
+        <li *ngFor="let episode of playlist.episodes">
+          <strong>{{ episode.title }}</strong> <span class="duration">{{ episode.duration }}</span>
+        </li>
+      </ul>
+      <p *ngIf="!playlist.episodes || playlist.episodes.length === 0" class="no-episodes">
+        No episodes in this playlist.
+      </p>
+    </div>
   </div>
 </div>

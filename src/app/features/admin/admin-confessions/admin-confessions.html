@@ -1,24 +1,31 @@
 <app-admin-navbar></app-admin-navbar>
 
-
-
 <section class="confessions-section">
-    <div class="confessions-content-wrapper">
-        <h2>Anonymous Confessions</h2>
-        <div class="confession-grid">
-            <div *ngFor="let confession of confessions" class="confession-card">
-                <p>{{ confession.message }}</p>
-                <div class="metadata">
-                    <span style="color: red;" class="category">{{ confession.category }}</span>
-                    <span style="color:blue" class="emotion">{{ confession.emotion }}</span>
-                    <span style="color:green" class="status" [ngClass]="{'approved': confession.is_approved === '1', 'pending': confession.is_approved === '0'}">
-                        {{ confession.is_approved === '1' ? 'Approved' : 'Pending' }}
-                    </span>
-                    <button (click)="toggleConfessionApproval(confession.id, confession.is_approved)" class="action-button">
-                        {{ confession.is_approved === '1' ? 'Reject' : 'Approve' }}
-                    </button>
-                </div>
-            </div>
+  <div class="confessions-content-wrapper">
+    <h2>Anonymous Confessions</h2>
+
+    <div class="confession-grid">
+      <div *ngFor="let confession of confessions" class="confession-card">
+        <p class="message">{{ confession.message }}</p>
+
+        <div class="metadata">
+          <span class="category">{{ confession.category }}</span>
+          <span class="emotion">{{ confession.emotion }}</span>
+          <span class="status" [ngClass]="{
+              'approved': confession.is_approved === '1',
+              'pending': confession.is_approved === '0'
+            }">
+            {{ confession.is_approved === '1' ? 'Approved' : 'Pending' }}
+          </span>
+
+          <button
+            class="action-button"
+            (click)="toggleConfessionApproval(confession.id, confession.is_approved)"
+          >
+            {{ confession.is_approved === '1' ? 'Reject' : 'Approve' }}
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </section>

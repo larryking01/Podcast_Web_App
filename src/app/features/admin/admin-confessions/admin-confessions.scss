@@ -1,155 +1,103 @@
+.confessions-section {
+  padding: 3rem 1rem;
+  background: linear-gradient(to right, #f7f9fc20, #eef3fc);
+  min-height: 100vh;
+  margin-top: 80px;
+}
 
+.confessions-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    /* Confessions Section Container */
-    .confessions-section {
-        margin-top: 100px;
-        font-family: 'Roboto', sans-serif;
-        padding: 30px 0; /* Add vertical padding for spacing */
-        background-color: var(--section-background); /* Explicitly set opaque background */
-        color: var(--text-color);
-        line-height: 1.6;
-        display: flex;
-        justify-content: center;
-        width: 100%; /* Ensure it spans the full width of its parent */
-        box-sizing: border-box; /* Include padding in element's total width/height */
-        color: #848383;
-    }
+.confessions-content-wrapper h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
 
-    .confessions-content-wrapper {
-        width: 100%;
-        max-width: 900px; /* Max width for content within the section */
-        padding: 0 20px; /* Horizontal padding for smaller screens */
-        box-sizing: border-box;
-    }
+/* Responsive Grid Layout */
+.confession-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
 
-    .confessions-section h2 {
-        text-align: center;
-        color: var(--primary-color);
-        margin-bottom: 40px;
-        font-size: 2.5em;
-        position: relative;
-    }
+/* Confession Card */
+.confession-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-    .confessions-section h2::after {
-        content: '';
-        width: 80px;
-        height: 4px;
-        background-color: var(--secondary-color);
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 2px;
-    }
+.confession-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
 
-    /* Grid for Confession Cards */
-    .confession-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-    }
-    button{
-        width: 90px;
-        height: 25px;
-        border-radius: 5px;
-        color: white;
-        border: none;
-        background-color: rgb(115, 27, 15);
-    }
+.confession-card .message {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
 
-    /* Individual Confession Card */
-    .confession-card {
-        background-color: var(--card-background); /* Explicitly set opaque background */
-        border: 1px solid var(--border-color); /* Explicitly set opaque border */
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Shadow will have some transparency, but this is a visual effect, not an element's core color */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+/* Metadata Area */
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+}
 
-    .confession-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
+/* Category and Emotion Tags */
+.category {
+  color: #e74c3c;
+  font-weight: 600;
+}
 
-    .confession-card p {
-        margin: 0 0 15px 0;
-        font-size: 1.1em;
-        color: var(--text-color); /* Explicitly set opaque text color */
-        flex-grow: 1;
-    }
+.emotion {
+  color: #3498db;
+  font-weight: 600;
+}
 
-    /* Metadata (Category, Emotion, Status) */
-    .confession-card .metadata {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        font-size: 0.9em;
-        color: var(--light-text-color); /* Explicitly set opaque text color */
-        margin-top: 15px;
-        border-top: 1px dashed var(--border-color); /* Explicitly set opaque border */
-        padding-top: 10px;
-    }
+/* Status Pill */
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
 
-    .confession-card .metadata span {
-        background-color: var(--tag-background); /* Explicitly set opaque background */
-        padding: 5px 10px;
-        border-radius: 5px;
-        white-space: nowrap;
-    }
+.status.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
 
-    .confession-card .metadata .category {
-        background-color: var(--secondary-color); /* Explicitly set opaque background */
-        color: #FFFFFF; /* Explicitly set opaque white text */
-        font-weight: bold;
-    }
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
 
-    .confession-card .metadata .emotion {
-        background-color: var(--emotion-tag-background); /* Explicitly set opaque background */
-        color: var(--emotion-tag-text); /* Explicitly set opaque text color */
-    }
+/* Action Button */
+.action-button {
+  margin-left: auto;
+  background: linear-gradient(to right, #00c853, #43a047);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
 
-    .confession-card .metadata .status {
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
-
-    /* Approved status styling */
-    .confession-card .metadata .status.approved {
-        background-color: var(--approved-color); /* Explicitly set opaque background */
-        color: #FFFFFF; /* Explicitly set opaque white text */
-    }
-
-    /* Pending status styling */
-    .confession-card .metadata .status.pending {
-        background-color: var(--pending-color); /* Explicitly set opaque background */
-        color: var(--text-color); /* Explicitly set opaque text color */
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .confessions-section h2 {
-            font-size: 2em;
-        }
-        .confession-grid {
-            grid-template-columns: 1fr; /* Stack cards on smaller screens */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .confessions-content-wrapper {
-            padding: 0 15px;
-        }
-        .confessions-card p {
-            font-size: 1em;
-        }
-        .confession-card .metadata {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 5px;
-        }
-    }
+.action-button:hover {
+  background: linear-gradient(to right, #00b140, #388e3c);
+}

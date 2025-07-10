@@ -1,7 +1,9 @@
 <app-admin-navbar></app-admin-navbar>
 
-<div class="container">
-  <h1>Playlists</h1>
+<div class="playlist-list-container">
+  <div class="header">
+    <h1>Playlists</h1>
+  </div>
 
   <div *ngIf="isLoading" class="loading-indicator">
     Loading playlists...
@@ -11,24 +13,18 @@
     {{ error }}
   </div>
 
-  <div *ngIf="!isLoading && !error">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Created At</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let playlist of playlists">
-          <td>{{ playlist.id }}</td>
-          <td><a [routerLink]="['/admin/playlists', playlist.id]">{{ playlist.name }}</a></td>
-          <td>{{ playlist.description }}</td>
-          <td>{{ playlist.created_at | date:'medium' }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div *ngIf="!isLoading && !error" class="playlist-grid">
+    <div class="playlist-card" *ngFor="let playlist of playlists">
+      <img [src]="'https://picsum.photos/seed/' + playlist.id + '/400/200'" alt="Playlist Image" class="playlist-image" />
+      <div class="playlist-content">
+        <h2>
+          <a [routerLink]="['/admin/playlists', playlist.id]">
+            {{ playlist.name }}
+          </a>
+        </h2>
+        <p class="description">{{ playlist.description }}</p>
+        <p class="created-at">Created At: {{ playlist.created_at | date:'medium' }}</p>
+      </div>
+    </div>
   </div>
 </div>
