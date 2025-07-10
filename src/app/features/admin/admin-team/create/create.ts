@@ -42,7 +42,6 @@ export class CreateTeam {
 
       this.teamMembersService.createTeamMember(newMember).subscribe({
         next: (response) => {
-          console.log('Team member created successfully:', response);
           // Optionally reset form or navigate away
           this.teamMemberForm.reset();
           // TODO: Add navigation or success message
@@ -63,7 +62,6 @@ export class CreateTeam {
         }
       });
     } else {
-      console.log('Form is invalid');
       // Mark all fields as touched to display validation errors
       this.teamMemberForm.markAllAsTouched();
     }

@@ -34,11 +34,9 @@ export class AdminNavbar {
         this.isDarkMode = !this.isDarkMode;
         if (this.isDarkMode) {
             document.body.classList.add('dark-theme');
-            console.log('Dark theme applied. Body class:', document.body.classList);
             localStorage.setItem('theme', 'dark');
         } else {
             document.body.classList.remove('dark-theme');
-            console.log('Light theme applied. Body class:', document.body.classList);
             localStorage.setItem('theme', 'light');
         }
     }

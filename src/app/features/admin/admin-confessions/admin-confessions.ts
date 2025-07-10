@@ -26,7 +26,6 @@ export class AdminConfessions {
       (response: AdminConfessionResponse) => {
         this.confessions = response.data;
         this.totalConfessions = response.meta?.total ?? 0;
-        console.log("confessions", this.confessions);
       },
       error => {
         console.error('Error fetching total confessions:', error);
@@ -41,7 +40,6 @@ export class AdminConfessions {
         const confession = this.confessions.find(c => c.id === id);
         if (confession) {
           confession.is_approved = newStatus;
-          console.log(`Confession ${id} status updated to ${newStatus}`);
         }
       },
       error => {
