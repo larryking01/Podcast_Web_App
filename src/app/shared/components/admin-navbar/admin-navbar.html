@@ -13,7 +13,10 @@
                     <a href="admin-login.html">Logout</a>
                 </div>
             </div>
-            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            <button class="theme-toggle" (click)="toggleTheme()">
+                <span *ngIf="!isDarkMode">🌙</span>
+                <span *ngIf="isDarkMode">☀️</span>
+            </button>
         </div>
     </div>
 </header>
