@@ -1,1 +1,24 @@
-<p>view-team works!</p>
+<app-admin-navbar></app-admin-navbar>
+
+<h2>Team Members</h2>
+
+<div *ngIf="teamMembers && teamMembers.length > 0; else noTeamMembers">
+  <div *ngFor="let member of teamMembers" class="team-member-card">
+    <img [src]="member.profile_image || 'assets/images/default-avatar.svg'" alt="{{ member.name }}" class="profile-image">
+    <h3>{{ member.name }}</h3>
+    <p><strong>Role:</strong> {{ member.role }}</p>
+    <p>{{ member.bio }}</p>
+    <div class="social-links">
+      <strong>Social Media:</strong>
+      <ul>
+        <li *ngFor="let link of member.social_media_links">
+          <a [href]="link.url" target="_blank">{{ link.platform }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #noTeamMembers>
+  <p>No team members found.</p>
+</ng-template>
