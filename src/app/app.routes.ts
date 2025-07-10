@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth-guard';
 import { AdminLogin } from './features/admin/admin-login/admin-login';
 import { Home } from './features/public/home/home';
 import { TeamMembers } from './features/public/team-members/team-members';
@@ -17,17 +18,20 @@ export const routes: Routes = [
         title: 'Admin Login'
     }, 
         {
-        path: 'admin/dashboard',
-        loadComponent: () => import('./features/admin/admin-dashboard/admin-dashboard').then( m => m.AdminDashboard ),
-        title: 'Admin dashboard'
-    },
+            path: 'admin/dashboard',
+            loadComponent: () => import('./features/admin/admin-dashboard/admin-dashboard').then( m => m.AdminDashboard ),
+            title: 'Admin dashboard',
+            canActivate: [authGuard]
+        },
     {
         path: 'admin/confessions',
         loadComponent: () => import('./features/admin/admin-confessions/admin-confessions').then( m => m.AdminConfessions ),
-        title: 'Admin view all confessions'
+        title: 'Admin view all confessions',
+        canActivate: [authGuard]
     },
     {
         path: 'admin/playlists',
+        canActivate: [authGuard],
         children: [
             {
                 path: 'create-playlists',
@@ -58,6 +62,7 @@ export const routes: Routes = [
     },
     {
         path: 'admin',
+        canActivate: [authGuard],
         children: [
             {
                 path: 'team',
