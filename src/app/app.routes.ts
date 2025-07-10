@@ -8,12 +8,12 @@ import { TeamMembers } from './features/public/team-members/team-members';
 
 export const routes: Routes = [
     {
-        path: 'admin',
+        path: '',
         component: Home,
         title: 'Home'
     },
     {
-        path: 'admin/login',
+        path: 'admin',
         component: AdminLogin,
         title: 'Admin Login'
     }, 
