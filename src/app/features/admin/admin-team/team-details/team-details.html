@@ -8,20 +8,20 @@
 
 <div *ngIf="teamMember; else loadingOrNoData">
   <div class="team-member-details-card">
-    <img [src]="teamMember?.profile_image || 'assets/images/default-avatar.svg'" [alt]="teamMember?.name" class="profile-image-large">
-    <h2>{{ teamMember?.name }}</h2>
-    <p><strong>Role:</strong> {{ teamMember?.role }}</p>
-    <p>{{ teamMember?.bio }}</p>
+    <img [src]="teamMember.profile_image || 'assets/images/default-avatar.svg'" [alt]="teamMember.name" class="profile-image-large">
+    <h2>{{ teamMember.name }}</h2>
+    <p><strong>Role:</strong> {{ teamMember.role }}</p>
+    <p>{{ teamMember.bio }}</p>
 
-    <div *ngIf="teamMember?.social_media_links && teamMember.social_media_links.length > 0">
+    <div *ngIf="teamMember.social_media_links && teamMember.social_media_links.length > 0">
       <strong>Social Media:</strong>
       <ul>
-        <li *ngFor="let link of teamMember?.social_media_links">
+        <li *ngFor="let link of teamMember.social_media_links">
           <a [href]="link.url" target="_blank">{{ link.platform }}</a>
         </li>
       </ul>
 
-        <button class="btn btn-secondary" style="color:orange" [routerLink]="['/admin/team/edit-team-member', teamMember?.id]">Edit</button>
+        <button class="btn btn-secondary" style="color:orange" [routerLink]="['/admin/team/edit-team-member', teamMember.id]">Edit</button>
 
     </div>
   </div>

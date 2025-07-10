@@ -4,14 +4,8 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { ErrorHanlder } from './error-hanlder.service';
 
-<<<<<<< HEAD
-import { Confession, AddConfessionRequest, 
-         ConfessionResponse, GetConfessionResponse, 
-         DeleteConfessionResponse, ToggleApprovalResponse } from '../models/confession.interface';
-=======
 import { getConfessons, Confession, AddConfessionRequest, ConfessionResponse, GetConfessionResponse, DeleteConfessionResponse, ToggleApprovalResponse } from '../models/confession.interface';
 import { AdminConfessionResponse } from '../models/admin-confession.interface';
->>>>>>> 03d15587b82d6c78170bef71d73b027ecc3d234e
 
 @Injectable({
   providedIn: 'root'
