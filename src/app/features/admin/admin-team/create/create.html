@@ -38,5 +38,13 @@
     <!-- Note: For multiple social media links, a more complex form array would be needed -->
   </div>
 
+  <!-- Server-side error messages -->
+  <div *ngIf="serverErrorMessages.length > 0" class="server-errors">
+    <h4>Errors:</h4>
+    <ul>
+      <li *ngFor="let error of serverErrorMessages">{{ error }}</li>
+    </ul>
+  </div>
+
   <button type="submit" [disabled]="teamMemberForm.invalid">Add Team Member</button>
 </form>

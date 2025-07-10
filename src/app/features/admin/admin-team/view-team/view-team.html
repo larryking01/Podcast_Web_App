@@ -8,7 +8,7 @@
 </div>
 
 <div *ngIf="teamMembers && teamMembers.length > 0; else noTeamMembers">
-  <div *ngFor="let member of teamMembers" class="team-member-card">
+  <div *ngFor="let member of teamMembers" class="team-member-card" [routerLink]="'/admin/team/team-member-details/' + member.id">
     <img [src]="member.profile_image || 'assets/images/default-avatar.svg'" alt="{{ member.name }}" class="profile-image">
     <h3>{{ member.name }}</h3>
     <p><strong>Role:</strong> {{ member.role }}</p>

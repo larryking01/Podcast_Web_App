@@ -12,6 +12,7 @@ import { AdminNavbar } from '../../../../shared/components/admin-navbar/admin-na
 })
 export class CreateTeam {
   teamMemberForm!: FormGroup;
+  serverErrorMessages: string[] = []; // Property to store server errors
 
   constructor(
     private fb: FormBuilder,
@@ -49,6 +50,16 @@ export class CreateTeam {
         error: (error) => {
           console.error('Error creating team member:', error);
           // TODO: Handle error display to the user
+          // Extract error messages from the response
+          if (error.error && error.error.message) {
+            this.serverErrorMessages = Array.isArray(error.error.message) ? error.error.message : [error.error.message];
+          } else if (error.error && error.error.errors) {
+            // Handle validation errors that might be in an 'errors' object
+            // Ensure values are strings before assigning
+            this.serverErrorMessages = Object.values(error.error.errors).map(String);
+          } else {
+            this.serverErrorMessages = ['An unknown error occurred. Please try again.'];
+          }
         }
       });
     } else {

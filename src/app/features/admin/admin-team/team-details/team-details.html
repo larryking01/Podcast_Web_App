@@ -1,1 +1,29 @@
-<p>team-details works!</p>
+<app-admin-navbar></app-admin-navbar>
+
+<div *ngIf="errorMessage" class="error-message">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<h2>Team Member</h2>
+
+<div *ngIf="teamMember; else loadingOrNoData">
+  <div class="team-member-details-card">
+    <img [src]="teamMember?.profile_image || 'assets/images/default-avatar.svg'" [alt]="teamMember?.name" class="profile-image-large">
+    <h2>{{ teamMember?.name }}</h2>
+    <p><strong>Role:</strong> {{ teamMember?.role }}</p>
+    <p>{{ teamMember?.bio }}</p>
+
+    <div *ngIf="teamMember?.social_media_links && teamMember.social_media_links.length > 0">
+      <strong>Social Media:</strong>
+      <ul>
+        <li *ngFor="let link of teamMember?.social_media_links">
+          <a [href]="link.url" target="_blank">{{ link.platform }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingOrNoData>
+  <p *ngIf="!errorMessage">Loading team member details...</p>
+</ng-template>
