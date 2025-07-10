@@ -146,7 +146,7 @@ body {
     /* Dark Theme Styles */
     body.dark-theme {
         background-color: #1a1a1a; /* Dark background */
-        color: #f0f0f0; /* Light text */
+        /* Removed general color property to avoid overriding h2 */
     }
     
     body.dark-theme .admin-header {
@@ -178,7 +178,7 @@ body {
     /* Dark Theme Styles */
     body.dark-theme {
         background-color: #1a1a1a; /* Dark background */
-        color: #f0f0f0; /* Light text */
+        /* Removed general color property to avoid overriding h2 */
     }
     
     body.dark-theme .admin-header {
@@ -253,7 +253,7 @@ body {
 /* Dark Theme Styles */
 body.dark-theme {
     background-color: #1a1a1a; /* Dark background */
-    color: #f0f0f0; /* Light text */
+    /* Removed general color property to avoid overriding h2 */
 }
 
 body.dark-theme .admin-header {
@@ -281,4 +281,24 @@ body.dark-theme .user-dropdown-menu a {
 
 body.dark-theme .user-dropdown-menu a:hover {
     background: #3a3a3a; /* Darker hover background */
+}
+/* Specific fix for h2 color in dark mode */
+body.dark-theme .section h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
+}
+/* Corrected h2 color for dark mode */
+body.dark-theme .section h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
+}
+/* Final attempt to fix h2 color in dark mode */
+body.dark-theme .section-header h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
+}
+/* Final attempt to fix h2 color in dark mode */
+body.dark-theme .section-header h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
+}
+/* Final attempt to fix h2 color in dark mode */
+body.dark-theme app-admin-dashboard .section-header h2 {
+    color: #f0f0f0; /* White color for h2 in dark mode */
 }
