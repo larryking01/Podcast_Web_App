@@ -1,1 +1,38 @@
-<p>edit-team works!</p>
+<app-admin-navbar></app-admin-navbar>
+
+
+
+<div class="edit-team-member-wrapper">
+  <div class="form-card">
+    <h2 class="form-title">Edit Team Member</h2>
+
+    <form [formGroup]="editTeamMemberForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter full name" />
+        <div *ngIf="editTeamMemberForm.get('name')?.invalid && (editTeamMemberForm.get('name')?.dirty || editTeamMemberForm.get('name')?.touched)" class="error-message">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <input type="text" id="role" formControlName="role" placeholder="e.g., Frontend Developer" />
+        <div *ngIf="editTeamMemberForm.get('role')?.invalid && (editTeamMemberForm.get('role')?.dirty || editTeamMemberForm.get('role')?.touched)" class="error-message">
+          Role is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl">Image URL:</label>
+        <input type="text" id="imageUrl" formControlName="imageUrl" placeholder="Paste image URL (optional)" />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="!editTeamMemberForm.valid" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-secondary" (click)="router.navigate(['/admin/team'])">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
