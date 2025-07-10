@@ -2,6 +2,11 @@
 
 <h2>Team Members</h2>
 
+<div class="controls">
+    <button class="btn btn-primary" routerLink="/admin/team/create-team-member">Add New Team Member</button>
+    
+</div>
+
 <div *ngIf="teamMembers && teamMembers.length > 0; else noTeamMembers">
   <div *ngFor="let member of teamMembers" class="team-member-card">
     <img [src]="member.profile_image || 'assets/images/default-avatar.svg'" alt="{{ member.name }}" class="profile-image">
