@@ -4,12 +4,7 @@
      
 
     <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>All Episodes</h1>
-            <p>Discover our complete collection of podcast episodes</p>
-        </div>
-    </section>
+    <app-page-header />
 
 
     <!-- Filters and Search -->
@@ -22,6 +17,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
 
@@ -32,23 +28,21 @@
             <div class="episodes-list">
                 @for( episode of paginatedEpisodes; track episode.id ) {
                     <!-- Episode Item -->
-                    <div class="episode-item" (click)="navigateToEpisodeDetails( episode.id )">
+                    <div class="episode-item">
                         <img [src]="episode.img_url" alt="Episode" class="episode-thumbnail">
                         <div class="episode-details">
                             <div class="episode-header">
                                 <h3>Episode {{ episode.id }}: {{ episode.title }}</h3>
                                 <span class="episode-category">Season: {{ episode.season }}</span>
                             </div>
-                            <!-- <p class="episode-host">Hosted by Sarah Williams</p> -->
                             <p class="episode-description">{{ episode.description }}</p>
                             <div class="episode-meta">
                                 <span class="episode-duration">🕒 {{ episode.duration }}</span>
                                 <span class="episode-date">📅 {{ episode.posted_on }}</span>
-                                <!-- <span class="episode-plays">👥 980 plays</span> -->
                             </div>
                             <div class="episode-actions">
-                                <button class="btn btn-play">▶ Play Now</button>
-                                <button class="btn btn-play">Details</button>
+                                <button class="btn btn-play" (click)="onPlayClick( episode )">▶ Play Now</button>
+                                <button class="btn btn-play" (click)="navigateToEpisodeDetails(episode.id)" >Details</button>
                                 <!-- <button class="btn btn-secondary">📱 Download</button>
                                 <button class="btn btn-outline">❤️ Save</button> -->
                             </div>

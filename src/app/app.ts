@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AudioPlayerComponent } from "./shared/components/audio-player-component/audio-player-component";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, AudioPlayerComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

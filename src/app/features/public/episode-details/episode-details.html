@@ -4,10 +4,10 @@
      
 
     <!-- Page Header -->
-    <section class="page-header">
+    <!-- <section class="page-header">
         <div class="container">
             @if(selectedEpisode) {
-                <h1>Now Playing: {{ selectedEpisode.title }}</h1>
+                <h1>Now Showing: {{ selectedEpisode.title }}</h1>
                 <p>Take a seat and press play. This episode unfolds a story worth hearing.</p>
             }
             @else {
@@ -15,42 +15,45 @@
                 <p>The requested episode might have been moved or deleted.</p>
             }
         </div>
-    </section>
+    </section> -->
+    
+    <app-page-header />
+
 
 
     <!-- Episode Details -->
      @if( selectedEpisode ) {
-
-    <section class="section">
-        <div class="container">
-            <!-- <h2>Episode details</h2> -->
-            <div class="playlists-featured">
-                <div class="playlist-featured">
-                    <div class="playlist-cover-large">
-                        <img [src]="selectedEpisode.img_url" alt="Tech Talks">
-                        <div class="playlist-overlay">
-                            <button class="btn-play-featured">▶</button>
+        <section class="section">
+            <div class="container">
+                <!-- <h2>Episode details</h2> -->
+                <div class="playlists-featured">
+                    <div class="playlist-featured">
+                        <div class="playlist-cover-large">
+                            <img [src]="selectedEpisode.img_url" alt="Tech Talks">
+                            <div class="playlist-overlay">
+                                <button class="btn-play-featured">▶</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>{{ selectedEpisode.title }}</h3>
-                        <p class="playlist-description">{{ selectedEpisode.description }}</p>
-                        <div class="playlist-stats">
-                            <span>Posted on: {{ selectedEpisode.posted_on }}</span>
-                            <span>•</span>
-                            <span>Duration: {{ selectedEpisode.duration }}</span>
-                            <span>•</span>
-                            <span>Season: {{ selectedEpisode.season }}</span>
-                        </div>
-                        <div class="playlist-actions">
-                            <button class="btn btn-primary">▶ Play </button>
-                            <!-- <button class="btn btn-secondary">📱 Download</button> -->
+                        <div class="playlist-info">
+                            <h3>{{ selectedEpisode.title }}</h3>
+                            <p class="playlist-description">{{ selectedEpisode.description }}</p>
+                            <div class="playlist-stats">
+                                <span>Posted on: {{ selectedEpisode.posted_on }}</span>
+                                <span>•</span>
+                                <span>Duration: {{ selectedEpisode.duration }}</span>
+                                <span>•</span>
+                                <span>Season: {{ selectedEpisode.season }}</span>
+                            </div>
+                            <div class="playlist-actions">
+                                <button class="btn btn-primary">▶ Play </button>
+                                <!-- <audio [src]="selectedEpisode.audio_url" controls></audio> -->
+                                <!-- <button class="btn btn-secondary">📱 Download</button> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     }
     <!-- @else {
         <p>failed to fetch....</p>

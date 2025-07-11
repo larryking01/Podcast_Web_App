@@ -1,15 +1,16 @@
-.page-header {
-    background: linear-gradient(135deg, #ff6b35, #f7931e);
-    color: white;
-    padding: 120px 0 60px;
-    text-align: center;
-    margin-top: 80px;
-}
+// .page-header {
+//     background: linear-gradient(135deg, #ff6b35, #f7931e);
+//     color: white;
+//     padding: 3rem 60px 3rem 60px;
+//     text-align: center;
+//     margin-top: 80px;
+//     height: 20rem;
+// }
 
-.page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
+// .page-header h1 {
+//     font-size: 3rem;
+//     margin-bottom: 1rem;
+// }
 
 .filters-section {
     padding: 2rem 0;
@@ -17,7 +18,7 @@
 }
 
 .filters-container {
-    display: flex;
+    display: column;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -205,6 +206,16 @@
 }
 
 
+
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .filters-section {
+        margin-top: 8rem;
+    }
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .episode-item {
@@ -221,6 +232,10 @@
     .episode-header {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .filters-section {
+        margin-top: 8rem;
     }
 
     .filters-container {

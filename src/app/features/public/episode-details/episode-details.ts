@@ -5,12 +5,13 @@ import { EpisodesService } from '../../../core/services/episodes.service';
 import { Episode } from '../../../core/models/episodes.interface';
 import { EpisodeResponse } from '../../../core/models/episodes.interface';
 import { ActivatedRoute } from '@angular/router';
+import { PageHeader } from '../../../shared/components/page-header/page-header';
 
 
 
 @Component({
   selector: 'app-episode-details',
-  imports: [Footer, Navbar],
+  imports: [Footer, Navbar, PageHeader],
   templateUrl: './episode-details.html',
   styleUrl: './episode-details.scss'
 })

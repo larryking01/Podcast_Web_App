@@ -1,0 +1,28 @@
+<section>
+    @if( audioPlayer.currentTitle$ | async; as title ) {
+        <div class="player-wrapper" *ngIf="audioPlayer.currentTitle$ | async as title">
+            <div class="player-content">
+                <span class="episode-title">🎧 Now Playing: {{ title }}</span>
+                <button (click)="audioPlayer.toggle()" class="btn btn-play">
+                    {{ (audioPlayer.isPlaying$ | async) ? 'Pause' : 'Play' }}
+                </button>
+            </div>
+
+            <div class="progress-bar">
+                <span>{{ formatTime(audioPlayer.currentTime$ | async) }}</span>
+                <input
+                    type="range"
+                    [value]="audioPlayer.currentTime$ | async"
+                    [max]="maxDuration"
+                    (input)="onSeek($event)"
+                />
+                <span>{{ formatTime(audioPlayer.duration$ | async) }}</span>
+            </div>
+
+            <div class="seekButtons">
+                <button (click)="seekRelative(-10)" class="btn btn-play">⏪ 10s</button>
+                <button (click)="seekRelative(10)" class="btn btn-play">⏩ 10s</button>
+            </div>
+        </div>
+    }
+</section>

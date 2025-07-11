@@ -10,7 +10,7 @@
             <li routerLinkActive="nav-link active">
                 <a routerLink="/confessions" class="nav-link">Confessions</a>
             </li>
-            <li routerLinkActive="nav-link active">
+            <li routerLinkActive="nav-link active" [routerLinkActiveOptions]="{ exact: true }">
                 <a routerLink="/episodes" class="nav-link">Episodes</a>
             </li>
             <li routerLinkActive="nav-link active">
