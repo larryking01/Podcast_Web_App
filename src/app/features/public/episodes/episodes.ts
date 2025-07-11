@@ -7,13 +7,13 @@ import { EpisodesService } from '../../../core/services/episodes.service';
 import { Episode } from '../../../core/models/episodes.interface';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { AudioPlayer } from '../../../core/services/audio-player';
-import { AudioPlayerComponent } from '../../../shared/components/audio-player-component/audio-player-component';
-import { AsyncPipe } from '@angular/common';
+// import { AudioPlayerComponent } from '../../../shared/components/audio-player-component/audio-player-component';
+// import { AsyncPipe } from '@angular/common';
 import { PageHeader } from '../../../shared/components/page-header/page-header';
 
 @Component({
   selector: 'app-episodes',
-  imports: [Navbar, Footer, MatPaginatorModule, AudioPlayerComponent, AsyncPipe, PageHeader ],
+  imports: [Navbar, Footer, MatPaginatorModule,  PageHeader ],
   templateUrl: './episodes.html',
   styleUrl: './episodes.scss'
 })

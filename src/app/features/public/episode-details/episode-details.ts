@@ -6,6 +6,7 @@ import { Episode } from '../../../core/models/episodes.interface';
 import { EpisodeResponse } from '../../../core/models/episodes.interface';
 import { ActivatedRoute } from '@angular/router';
 import { PageHeader } from '../../../shared/components/page-header/page-header';
+import { AudioPlayer } from '../../../core/services/audio-player';
 
 
 
@@ -21,6 +22,8 @@ export class EpisodeDetails implements OnInit {
   activatedRoute = inject( ActivatedRoute )
   selectedEpisodeID: string | null = null
   selectedEpisode: Episode | undefined = undefined
+
+  audioPlayerService = inject(AudioPlayer)
 
 
   episodes$: EpisodeResponse = {
@@ -55,6 +58,12 @@ export class EpisodeDetails implements OnInit {
     }
 
   }
+
+
+  onPlayClick( episode: Episode ) {
+    this.audioPlayerService.play( episode.audio_url, episode.title )
+  }
+
 
 
 }

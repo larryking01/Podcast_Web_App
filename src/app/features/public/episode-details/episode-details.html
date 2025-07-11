@@ -17,7 +17,9 @@
         </div>
     </section> -->
     
-    <app-page-header />
+    <app-page-header
+        [pageTitle]="'Now Playing'"
+        [subTitle]="'Just one tap away from the full story.'"  />
 
 
 
@@ -45,7 +47,7 @@
                                 <span>Season: {{ selectedEpisode.season }}</span>
                             </div>
                             <div class="playlist-actions">
-                                <button class="btn btn-primary">▶ Play </button>
+                                <button class="btn btn-play" (click)="onPlayClick( selectedEpisode )">▶ Play </button>
                                 <!-- <audio [src]="selectedEpisode.audio_url" controls></audio> -->
                                 <!-- <button class="btn btn-secondary">📱 Download</button> -->
                             </div>
