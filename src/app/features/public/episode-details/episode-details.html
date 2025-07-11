@@ -6,44 +6,55 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Now Playing: Episode Name</h1>
-            <p>Take a seat and press play. This episode unfolds a story worth hearing.</p>
+            @if(selectedEpisode) {
+                <h1>Now Playing: {{ selectedEpisode.title }}</h1>
+                <p>Take a seat and press play. This episode unfolds a story worth hearing.</p>
+            }
+            @else {
+                <h1> Sorry, we could not fetch episode details...</h1>
+                <p>The requested episode might have been moved or deleted.</p>
+            }
         </div>
     </section>
 
 
-    <!-- Featured Playlists -->
+    <!-- Episode Details -->
+     @if( selectedEpisode ) {
+
     <section class="section">
         <div class="container">
-            <h2>Episode details</h2>
+            <!-- <h2>Episode details</h2> -->
             <div class="playlists-featured">
                 <div class="playlist-featured">
                     <div class="playlist-cover-large">
-                        <img src="https://via.placeholder.com/400x400" alt="Tech Talks">
+                        <img [src]="selectedEpisode.img_url" alt="Tech Talks">
                         <div class="playlist-overlay">
                             <button class="btn-play-featured">▶</button>
                         </div>
                     </div>
                     <div class="playlist-info">
-                        <h3>Tech Talks</h3>
-                        <p class="playlist-description">Dive deep into the world of technology with our curated selection of tech-focused episodes featuring industry experts, innovators, and thought leaders.</p>
+                        <h3>{{ selectedEpisode.title }}</h3>
+                        <p class="playlist-description">{{ selectedEpisode.description }}</p>
                         <div class="playlist-stats">
-                            <span>8 episodes</span>
+                            <span>Posted on: {{ selectedEpisode.posted_on }}</span>
                             <span>•</span>
-                            <span>6h 20m total</span>
+                            <span>Duration: {{ selectedEpisode.duration }}</span>
                             <span>•</span>
-                            <span>12.5K plays</span>
+                            <span>Season: {{ selectedEpisode.season }}</span>
                         </div>
                         <div class="playlist-actions">
-                            <button class="btn btn-primary">▶ Play All</button>
-                            <button class="btn btn-secondary">📱 Download</button>
+                            <button class="btn btn-primary">▶ Play </button>
+                            <!-- <button class="btn btn-secondary">📱 Download</button> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    }
+    <!-- @else {
+        <p>failed to fetch....</p>
+    } -->
 
     <!-- All Playlists -->
     <section class="section bg-light">
