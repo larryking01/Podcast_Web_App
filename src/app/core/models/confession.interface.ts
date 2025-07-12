@@ -7,7 +7,7 @@ data: {
     category: string;
     emotion: string;
     is_approved: string;
-    // Add other properties if present in the objects
+    
 }[];
 meta: {
     total: number;
@@ -15,6 +15,7 @@ meta: {
     last_page: number;
 };
 }
+
 
 export interface getConfessons{
   status: string;
@@ -25,6 +26,7 @@ export interface getConfessons{
     total: number;
   };
 }
+
 
 export interface AddConfessionRequest {
   message: string;
@@ -59,6 +61,7 @@ export interface ToggleApprovalResponse {
     content: string;
     is_approved: boolean;
   };
+
 }
 
 export interface cofession2{
@@ -67,4 +70,5 @@ export interface cofession2{
   description: string;
   img_url: string;
   audio_url: string;
+
 }

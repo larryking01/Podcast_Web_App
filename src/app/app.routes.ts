@@ -13,7 +13,7 @@ export const routes: Routes = [
         title: 'Home'
     },
     {
-        path: 'admin/login',
+        path: 'admin',
         component: AdminLogin,
         title: 'Admin Login'
     }, 
