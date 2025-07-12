@@ -10,10 +10,12 @@ export interface TeamMember {
   name: string;
   role: string;
   bio: string;
+
   profile_image: string | null;
   social_media_links: SocialMediaLink[];
   'created-at'?: string;
   'updated-at'?: string;
+
 }
 
 export interface TeamMembersListResponse {

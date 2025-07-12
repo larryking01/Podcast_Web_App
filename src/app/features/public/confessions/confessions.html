@@ -1,15 +1,10 @@
 <article>
-    <!-- Navigation -->
-     <app-navbar />
+    <app-navbar />
 
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Anonymous Confessions</h1>
-            <p>Share your story anonymously with our community</p>
-        </div>
-    </section>
+    <app-page-header
+        [pageTitle]="'Spill It'" 
+        [subTitle]="'Real thoughts. Real feelings. Unfiltered and unashamed.'"
+    />
 
 
     <!-- Confession Form -->
@@ -74,14 +69,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label class="checkbox-container">
-                            <input type="checkbox" id="guidelines-agreement" required>
-                            <span class="checkmark"></span>
-                            I agree to the community guidelines and understand that my confession will be reviewed before publication
-                        </label>
-                    </div> -->
-
                     <div class="form-actions">
                         <!-- <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button> -->
                         <button type="submit" class="btn btn-primary">Submit Confession</button>
@@ -122,9 +109,5 @@
         </div>
     </section>
 
-
-    <!-- Footer -->
     <app-footer />
-
-
 </article>

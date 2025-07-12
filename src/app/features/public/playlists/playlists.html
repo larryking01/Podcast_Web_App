@@ -1,19 +1,13 @@
 <article>
-    <!-- Navigation -->
      <app-navbar />
      
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Podcast Playlists</h1>
-            <p>Curated collections of episodes organized by topic and theme</p>
-        </div>
-    </section>
+     <app-page-header
+        [pageTitle]="'Binge-Worthy Bundles'"
+        [subTitle]="'Handpicked collections to match your mood, moment, or curiosity.'" />
 
 
     <!-- Featured Playlists -->
-    <section class="section">
+    <!-- <section class="section">
         <div class="container">
             <h2>Featured Playlists</h2>
             <div class="playlists-featured">
@@ -42,87 +36,48 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <!-- All Playlists -->
     <section class="section bg-light">
         <div class="container">
+            @if( playListsArray.length > 0 ) {
+
             <h2>All Playlists</h2>
             <div class="playlists-grid">
-                <!-- Playlist Card -->
-                <div class="playlist-card-detailed">
-                    <div class="playlist-cover">
-                        <img src="https://via.placeholder.com/250x250" alt="Business Insights">
-                        <div class="playlist-overlay">
-                            <button class="btn btn-play-large">▶</button>
-                        </div>
-                    </div>
-                    <div class="playlist-content">
-                        <h3>Business Insights</h3>
-                        <p>Essential episodes for entrepreneurs and business professionals looking to grow their ventures.</p>
-                        <div class="playlist-meta">
-                            <span>15 episodes</span>
-                            <span>•</span>
-                            <span>12h 30m</span>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">Business</span>
-                            <span class="tag">Entrepreneurship</span>
-                        </div>
-                        <div class="playlist-actions">
-                            <button class="btn btn-play">▶ Play</button>
-                            <button class="btn btn-outline">View Details</button>
-                        </div>
-                    </div>
-                </div>
+                @for( playlist of playListsArray; track playlist.id ) {
 
                 <!-- Playlist Card -->
                 <div class="playlist-card-detailed">
                     <div class="playlist-cover">
-                        <img src="https://via.placeholder.com/250x250" alt="Future Trends">
-                        <div class="playlist-overlay">
-                            <button class="btn btn-play-large">▶</button>
-                        </div>
+                        <img [src]="playlist.imageUrl" alt="Business Insights">
                     </div>
+
                     <div class="playlist-content">
-                        <h3>Future Trends</h3>
-                        <p>Exploring emerging trends across industries and their potential impact on society and business.</p>
+                        <h3>{{ playlist.name }}</h3>
+                        <p>{{ playlist.description }}</p>
                         <div class="playlist-meta">
-                            <span>9 episodes</span>
+                            <span class="episode-count">{{ playlist.episodes?.length}} episode(s)</span>
                             <span>•</span>
-                            <span>6h 30m</span>
+
+                            <div class="playlist-duration">
+                                <span>12h 30m</span>
+                            </div>
                         </div>
-                        <div class="tags">
-                            <span class="tag">Trends</span>
-                            <span class="tag">Future</span>
-                            <span class="tag">Innovation</span>
-                        </div>
-                        <div class="playlist-actions">
-                            <button class="btn btn-play">▶ Play</button>
-                            <button class="btn btn-outline">View Details</button>
-                        </div>
+                        @for( episode of playlist.episodes; track episode.id ) {
+                            <div class="playlist-actions">
+                                <button class="btn btn-play" (click)="navigateToEpisodeDetails( episode.id )">▶ {{ episode.title }}</button>
+                            </div>
+                        }
                     </div>
                 </div>
+            }
 
             </div>
+        }
         </div>
     </section>
-
-
-    <!-- Create Playlist CTA -->
-    <section class="section">
-        <div class="container">
-            <div class="cta-card">
-                <h2>Create Your Own Playlist</h2>
-                <p>Organize your favorite episodes into custom playlists for easy listening</p>
-                <button class="btn btn-primary">Create Playlist</button>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
+    
     <app-footer />
-
 </article>

@@ -1,0 +1,35 @@
+.page-header {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    padding: 3rem 60px 3rem 60px;
+    text-align: center;
+    margin-top: 80px;
+    height: 20rem;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+.audio-container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+    .page-header {
+        padding: 1rem 60px 3rem 60px;
+    }
+
+    .audio-container-div {
+        margin-top: 2rem;
+    }
+}

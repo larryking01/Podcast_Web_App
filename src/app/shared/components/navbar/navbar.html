@@ -4,12 +4,24 @@
             <h1>🎧 Podcat</h1>
         </div>
         <ul class="nav-menu">
-            <li><a routerLink="/" class="nav-link active">Home</a></li>
-            <li><a routerLink="/confessions" class="nav-link">Confessions</a></li>
-            <li><a routerLink="/episodes" class="nav-link">Episodes</a></li>
-            <li><a routerLink="/playlists" class="nav-link">Playlists</a></li>
-            <li><a routerLink="/team-members" class="nav-link">Team</a></li>
-            <li><a routerLink="/admin/login" class="nav-link">Admin</a></li>
+            <li routerLinkActive="nav-link active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink="/" class="nav-link">Home</a>
+            </li>
+            <li routerLinkActive="nav-link active">
+                <a routerLink="/confessions" class="nav-link">Confessions</a>
+            </li>
+            <li routerLinkActive="nav-link active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink="/episodes" class="nav-link">Episodes</a>
+            </li>
+            <li routerLinkActive="nav-link active">
+                <a routerLink="/playlists" class="nav-link">Playlists</a>
+            </li>
+            <li routerLinkActive="nav-link active">
+                <a routerLink="/team-members" class="nav-link">Team</a>
+            </li>
+            <li routerLinkActive="nav-link active">
+                <a routerLink="/admin/login" class="nav-link">Admin</a>
+            </li>
         </ul>
         <button class="theme-toggle">🌙</button>
     </div>

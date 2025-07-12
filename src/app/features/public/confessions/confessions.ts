@@ -4,11 +4,12 @@ import { Footer } from '../../../shared/components/footer/footer';
 import { ConfessionsService } from '../../../core/services/confessions.service';
 import { AddConfessionRequest, ConfessionResponse } from '../../../core/models/confession.interface';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PageHeader } from '../../../shared/components/page-header/page-header';
 
 
 @Component({
   selector: 'app-confessions',
-  imports: [Navbar, Footer, ReactiveFormsModule],
+  imports: [Navbar, Footer, ReactiveFormsModule, PageHeader],
   templateUrl: './confessions.html',
   styleUrl: './confessions.scss'
 })

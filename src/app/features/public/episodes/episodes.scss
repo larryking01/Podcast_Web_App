@@ -1,15 +1,3 @@
-.page-header {
-    background: linear-gradient(135deg, #ff6b35, #f7931e);
-    color: white;
-    padding: 120px 0 60px;
-    text-align: center;
-    margin-top: 80px;
-}
-
-.page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
 
 .filters-section {
     padding: 2rem 0;
@@ -17,7 +5,7 @@
 }
 
 .filters-container {
-    display: flex;
+    display: column;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -39,7 +27,7 @@
 
 .search-btn {
     position: absolute;
-    right: 5px;
+    left: 47%;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -49,27 +37,6 @@
     padding: 8px;
 }
 
-.filter-buttons {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 8px 16px;
-    border: 1px solid #ddd;
-    background: white;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: #ff6b35;
-    color: white;
-    border-color: #ff6b35;
-}
 
 .episodes-section {
     padding: 3rem 0;
@@ -169,44 +136,40 @@
     color: #ff6b35;
 }
 
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 3rem;
-    flex-wrap: wrap;
-}
 
-.pagination-btn {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    background: white;
-    border-radius: 5px;
-    cursor: pointer;
+a {
     transition: all 0.3s ease;
 }
 
-.pagination-btn:hover,
-.pagination-btn.active {
-    background: #ff6b35;
-    color: white;
-    border-color: #ff6b35;
+
+a:hover {
+    transform: translateY(-4px);
+    border: 1px dashed #ff6b35;
+    border-radius: 10%;
+
 }
 
-.pagination-btn.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+
+
+
+@media (min-width: 601px) and (max-width: 1023px) {
+    .filters-section {
+        margin-top: 8rem;
+    }
+
+    .search-input {
+        min-width: 100%;
+    }
+
+    .search-btn {
+        left: 93%;
+    }
 }
 
-.pagination-btn.disabled:hover {
-    background: white;
-    color: #666;
-    border-color: #ddd;
-}
 
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .episode-item {
         flex-direction: column;
         text-align: center;
@@ -223,6 +186,10 @@
         gap: 0.5rem;
     }
 
+    .filters-section {
+        margin-top: 8rem;
+    }
+
     .filters-container {
         flex-direction: column;
     }
@@ -232,6 +199,15 @@
     }
 
     .episode-actions {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .podcast-links {
+        align-self: center;
+    }
+
+    .search-btn {
+        left: 87%;
     }
 }

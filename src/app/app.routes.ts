@@ -3,7 +3,7 @@ import { authGuard } from './core/guards/auth-guard';
 import { AdminLogin } from './features/admin/admin-login/admin-login';
 import { Home } from './features/public/home/home';
 import { TeamMembers } from './features/public/team-members/team-members';
-
+import { NotFound } from './features/public/not-found/not-found';
 
 
 export const routes: Routes = [
@@ -13,7 +13,7 @@ export const routes: Routes = [
         title: 'Home'
     },
     {
-        path: 'admin/login',
+        path: 'admin',
         component: AdminLogin,
         title: 'Admin Login'
     }, 
@@ -115,5 +115,10 @@ export const routes: Routes = [
         path: 'team-members',
         component: TeamMembers,
         title: 'Meet our team'
+    },
+    {
+        path: '**',
+        title: 'Not Found',
+        component: NotFound
     }
 ];

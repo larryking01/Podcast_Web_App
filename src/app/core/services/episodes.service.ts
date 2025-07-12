@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { ErrorHanlder } from './error-hanlder.service';
 
@@ -18,6 +18,15 @@ export class EpisodesService {
   getEpisodes(): Observable<EpisodeResponse> {
     return this.http.get<EpisodeResponse>(`${this.baseUrl}/v1/episodes`)
       .pipe(catchError(this.errorHandler.handle));
+  }
+
+  // get episode by id.
+  getEpisodeByID(episodeID: number): Observable<Episode | undefined> {
+    return this.http.get<EpisodeResponse>(`${this.baseUrl}/v1/episodes`)
+    .pipe(
+      catchError(this.errorHandler.handle),
+      map(( episodeResponse ) => episodeResponse.data.find( episode => episode.id === episodeID ))
+    )
   }
 
   // Create a new episode

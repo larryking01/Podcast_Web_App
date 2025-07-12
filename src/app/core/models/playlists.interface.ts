@@ -6,6 +6,7 @@ export interface Playlist {
   created_at: string;
   updated_at: string;
   episodes?: Episode[];
+  imageUrl?: string
 }
 
 export interface Episode {
@@ -18,6 +19,7 @@ export interface Episode {
 
 export interface PlaylistsResponse {
   status: string;
+
   data: {
     current_page: number;
     data: Playlist[];
@@ -36,6 +38,7 @@ export interface PlaylistsResponse {
     prev_page_url: string | null;
     to: number;
     total: number;
+
   };
 }
 
