@@ -10,10 +10,11 @@ import { AudioPlayer } from '../../../core/services/audio-player';
 // import { AudioPlayerComponent } from '../../../shared/components/audio-player-component/audio-player-component';
 // import { AsyncPipe } from '@angular/common';
 import { PageHeader } from '../../../shared/components/page-header/page-header';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-episodes',
-  imports: [Navbar, Footer, MatPaginatorModule,  PageHeader ],
+  imports: [Navbar, Footer, MatPaginatorModule,  PageHeader, RouterModule ],
   templateUrl: './episodes.html',
   styleUrl: './episodes.scss'
 })

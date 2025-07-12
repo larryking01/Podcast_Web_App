@@ -6,6 +6,7 @@ export interface Playlist {
   created_at: string;
   updated_at: string;
   episodes?: Episode[];
+  imageUrl?: string
 }
 
 export interface Episode {

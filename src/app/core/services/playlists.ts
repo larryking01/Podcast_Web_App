@@ -1,6 +1,7 @@
 import { Injectable, inject, OnInit } from '@angular/core';
 import { PlaylistsService } from './playlists.service';
 import { Playlist } from '../models/playlists.interface';
+import { PlaylistResponse } from '../models/playlists.interface';
 
 
 @Injectable({
@@ -13,19 +14,20 @@ export class Playlists implements OnInit {
 
 
   ngOnInit(): void {
+    console.log('all playlists')
+    this.getAllPlaylists()
     
   }
 
 
-  // getAllPlaylists() {
-  //   this.playListService.getAllPlaylists().subscribe({
-  //     next: ( playListsResponse ) => {
-  //       console.log("playlists response = ", playListsResponse )
-  //       this.playListsArray = playListsResponse.data
-
-  //     }
-  //   })
-  // }
+  getAllPlaylists() {
+    this.playListService.getAllPlaylists().subscribe({
+      next: ( playListsResponse ) => {
+        console.log("playlists response = ", playListsResponse )
+      }
+    })
+    
+  }
 
 
 }

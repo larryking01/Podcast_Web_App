@@ -283,13 +283,15 @@
 
 .member-stats {
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
+    gap: 1rem;
     border-top: 1px solid #e0e0e0;
     padding-top: 1rem;
 }
 
 .stat {
     text-align: center;
+    cursor: pointer;
 }
 
 .stat-number {
@@ -297,13 +299,37 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #ff6b35;
+    // border-radius: 50%;
 }
+
+
+// svg {
+//     border-radius: 100%;
+// }
 
 .stat-label {
     font-size: 0.9rem;
     color: #888;
 }
 
+
+.episode-action-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+
+a {
+    transition: all 0.3s ease;
+}
+
+
+a:hover {
+    transform: translateY(-4px);
+    border: 1px dashed #ff6b35;
+    border-radius: 10%;
+
+}
 
 
 

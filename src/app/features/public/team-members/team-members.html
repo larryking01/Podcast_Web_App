@@ -1,9 +1,6 @@
 <article>
-    <!-- Navigation -->
     <app-navbar />
 
-
-    <!-- Page Header -->
     <app-page-header
         [pageTitle]="'The People Behind the Mic'"
         [subTitle]="'Get to know the people who make this podcast possible.'" />
@@ -23,38 +20,72 @@
     <!-- Team Members -->
     <section class="section bg-light">
         <div class="container">
+            @if( teamMembersArray.length > 0 ) {
             <h2>Our Hosts & Producers</h2>
             <div class="team-grid">
                 <!-- Team Member -->
+                 @for( teamMember of teamMembersArray; track teamMember.id ) {
                 <div class="team-member">
                     <div class="member-photo">
-                        <img src="https://via.placeholder.com/300x300" alt="Alex Johnson">
-                        <div class="member-overlay">
-                            <div class="social-links">
-                                <a href="#" class="social-link">📧</a>
-                                <a href="#" class="social-link">🐦</a>
-                                <a href="#" class="social-link">💼</a>
-                            </div>
-                        </div>
+                        <img [src]="teamMember.profile_image" [alt]="teamMember.name">
                     </div>
                     <div class="member-info">
-                        <h3>Alex Johnson</h3>
-                        <p class="member-role">Lead Host & Tech Correspondent</p>
-                        <p class="member-bio">Alex is a seasoned technology journalist with over 10 years of experience covering the latest innovations in AI, software development, and emerging tech trends. He brings complex technical concepts to life through engaging storytelling.</p>
-                        <div class="member-stats">
-                            <div class="stat">
-                                <span class="stat-number">45</span>
-                                <span class="stat-label">Episodes Hosted</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">150K</span>
-                                <span class="stat-label">Total Listens</span>
-                            </div>
-                        </div>
+                        <h3>{{ teamMember.name }}</h3>
+                        <p class="member-role">{{ teamMember.role }}</p>
+                        <p class="member-bio">{{ teamMember.bio }}</p>
+                            <div class="member-stats">
+                                @for( social_link of teamMember.social_media_links; track social_link.id ) {
+                                    <div class="stat">
+                                        @switch( social_link.platform ) {
+                                            @case ('LinkedIn') {
+                                                <a [routerLink]="social_link.url">
+                                                    <span class="stat-number">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                                                        <path fill="currentColor" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path>
+                                                        <path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
+                                                        </svg>              
+                                                    </span>  
+                                                </a>                            
+                                            }
+                                            @case ('Twitter') {
+                                                <a [routerLink]="social_link.url">
+                                                    <span class="stat-number">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="46" height="46" viewBox="0 0 50 50">
+                                                        <path fill="currentColor" d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+                                                        </svg>                                                
+                                                    </span>    
+                                                </a>                          
+                                            }
+                                            @case ('Instagram') {
+                                                <a [routerLink]="social_link.url">
+                                                    <span class="stat-number">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient>
+                                                        <path fill="currentColor" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+                                                        </svg>                                                
+                                                    </span>     
+                                                </a>                           
+                                             }
+                                            @default {
+                                                <a [routerLink]="social_link.url">
+                                                    <span class="stat-number">
+                                                        {{ social_link.platform }}
+                                                    </span>
+                                                </a>                                            
+                                                }
+                                        }
+                                    </div>
+                                }
+                                @empty {
+                                    <span class="stat-number">No social links</span>
+                                }
+                            </div> 
                     </div>
                 </div>
+            }
 
             </div>
+        }
         </div>
     </section>
 
@@ -77,42 +108,12 @@
                         </ul>
                     </div>
                     <div class="behind-image">
-                        <img src="https://via.placeholder.com/500x400" alt="Studio Setup">
+                        <img [src]="getStudioImage()" alt="Studio Setup">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Join Our Team -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="join-team">
-                <h2>Join Our Team</h2>
-                <p>We're always looking for passionate storytellers, subject matter experts, and creative professionals to join our growing team.</p>
-                <div class="opportunities">
-                    <div class="opportunity">
-                        <h4>Guest Host Opportunities</h4>
-                        <p>Share your expertise as a guest host on relevant episodes</p>
-                    </div>
-                    <div class="opportunity">
-                        <h4>Content Collaboration</h4>
-                        <p>Partner with us to create educational and entertaining content</p>
-                    </div>
-                    <div class="opportunity">
-                        <h4>Technical Roles</h4>
-                        <p>Audio engineering, web development, and digital marketing positions</p>
-                    </div>
-                </div>
-                <button class="btn btn-primary">Contact Us</button>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
     <app-footer />
-
-
 </article>
