@@ -9,56 +9,123 @@
             <h1>Welcome to Podcat</h1>
             <p>Your favorite podcast destination with amazing stories, insightful conversations, and engaging content.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary">Listen Now</button>
-                <button class="btn btn-secondary" routerLink="/episodes">Browse Episodes</button>
+                <!-- <button class="btn btn-secondary">Listen Now</button> -->
+                <button class="btn btn-primary" routerLink="/episodes">Browse Episodes</button>
             </div>
+        </div>
 
+        <div class="audio-player-div">
             <app-audio-player-component />
         </div>
+
     </section>
 
 
     <!-- Latest Episodes -->
     <section class="section">
-        <div class="container">
-            <h2>Latest Episodes</h2>
-            <div class="episodes-grid">
-                <div class="episode-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Episode" class="episode-image">
-                    <div class="episode-content">
-                        <h3>Episode 42: The Future of Technology</h3>
-                        <p class="episode-host">Hosted by Alex Johnson</p>
-                        <p class="episode-description">Exploring the latest trends in AI and machine learning...</p>
-                        <div class="episode-meta">
-                            <span class="episode-duration">45 min</span>
-                            <span class="episode-date">Dec 15, 2024</span>
+        @if( latestEpisodes.length > 0 ) {
+            <div class="container">
+                <h2>Latest Episodes</h2>
+                <div class="episodes-grid">
+                @for( recentEpisode of latestEpisodes; track recentEpisode.id ) {
+                    <div class="episode-card">
+                        <img [src]="recentEpisode.img_url" alt="Episode" class="episode-image">
+                        <div class="episode-content">
+                            <h3>{{ recentEpisode.title }}</h3>
+                            <!-- <p class="episode-host">Hosted by Alex Johnson</p> -->
+                            <p class="episode-description">{{ recentEpisode.description }}</p>
+                            <div class="episode-meta">
+                                <span class="episode-duration">{{ recentEpisode.duration }}</span>
+                                <span class="episode-date">{{ recentEpisode.posted_on }}</span>
+                            </div>
+                            <button class="btn btn-play" (click)="onPlayClick( recentEpisode )">▶ Play</button>
                         </div>
-                        <button class="btn btn-play">▶ Play</button>
                     </div>
+                    }
                 </div>
             </div>
-        </div>
+        }
+        @else {
+
+        }
     </section>
     
 
     <!-- Featured Playlists -->
     <section class="section bg-light">
+        @if( playlistsArray.length > 0 ) {
+            <div class="container">
+                <h2>Featured Playlists</h2>
+                <div class="playlists-grid">
+                    @for( playlist of playlistsArray; track playlist.id ) {
+                        <div class="playlist-card">
+                            <div class="playlist-cover">
+                                <!-- <img [src]="playlist.name" alt="Playlist"> -->
+                                <div class="playlist-overlay">
+                                    <button class="btn btn-play-large">▶</button>
+                                </div>
+                            </div>
+                            <h3>{{ playlist.name }}</h3>
+                            <p>{{ playlist.episodes?.length }} episode(s) • 6h 20m</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </section>
+
+
+    <!-- Team Introduction -->
+    <section class="section">
         <div class="container">
-            <h2>Featured Playlists</h2>
-            <div class="playlists-grid">
-                <div class="playlist-card">
-                    <div class="playlist-cover">
-                        <img src="https://via.placeholder.com/250x250" alt="Playlist">
-                        <div class="playlist-overlay">
-                            <button class="btn btn-play-large">▶</button>
+            <div class="team-intro">
+                <h2>Who We Are</h2>
+                <p>Our diverse team brings together years of experience in broadcasting, journalism, technology, and storytelling. We're united by our passion for creating engaging content that informs, entertains, and inspires our listeners around the world.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Team Members -->
+    <section class="section bg-light">
+        @if( teamMembersArray.length > 0 ) {
+        <div class="container">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <!-- Team Member -->
+                 @for( teamMember of teamMembersArray; track teamMember.id ) {
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img [src]="teamMember.profile_image" [alt]="teamMember.name">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#" class="social-link">📧</a>
+                                    <a href="#" class="social-link">🐦</a>
+                                    <a href="#" class="social-link">💼</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>{{ teamMember.name }}</h3>
+                            <p class="member-role">{{ teamMember.role }}</p>
+                            <p class="member-bio">{{ teamMember.bio }}</p>
+                            <!-- <div class="member-stats">
+                                <div class="stat">
+                                    <span class="stat-number">Stats</span>
+                                    <span class="stat-label">Episodes Hosted</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">150K</span>
+                                    <span class="stat-label">Total Listens</span>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
-                    <h3>Tech Talks</h3>
-                    <p>8 episodes • 6h 20m</p>
-                </div>
+                 }
 
             </div>
         </div>
+        }
     </section>
 
 

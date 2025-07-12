@@ -1,7 +1,7 @@
 .player-wrapper {
-  position: absolute;
-  top: 45%;
-  left: 20%;
+  // position: absolute;
+  // top: 45%;
+  // left: 20%;
   background: linear-gradient(135deg, #ff6b35, #f7931e);
   background-color: blue;
   color: white;
@@ -11,6 +11,7 @@
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   border-radius: 0.625rem;
+  // width: 100%;
 }
 
 .player-content {
@@ -58,87 +59,15 @@
     display: flex;
     gap: 1rem;
 }
-
-
-
-@media (min-width: 601px) and (max-width: 1023px) {
-    .player-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
-  background-color: red;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  border-radius: 0.625rem;
-}
-
-.player-content {
-  display: flex;
-  flex-direction: column;
-//   align-items: center;
-  gap: 1rem;
-}
-
-.episode-title {
-  font-weight: 500;
-}
-
-.progress-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-
-  input[type='range'] {
-    flex-grow: 1;
-    appearance: none;
-    height: 4px;
-    background: #ccc;
-    border-radius: 2px;
-
-    &::-webkit-slider-thumb {
-      appearance: none;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #2196f3;
-      cursor: pointer;
-    }
-  }
-
-  span {
-    width: 40px;
-    text-align: center;
-    font-size: 0.85rem;
-  }
-}
-
-
-.seekButtons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-}
-
-
-
 
 
 
 @media (min-width: 601px) and (max-width: 1023px) {
 
 .player-wrapper {
-  position: absolute;
-  top: 40%;
-  left: 5%;
+  // position: absolute;
+  // top: 40%;
+  // left: 5%;
   background: linear-gradient(135deg, #ff6b35, #f7931e);
   color: white;
   padding: 1rem;
@@ -210,9 +139,9 @@
 @media (max-width: 600px) {
 
 .player-wrapper {
-  position: absolute;
-  top: 44%;
-  left: 5%;
+  // position: absolute;
+  // top: 44%;
+  // left: 5%;
   background: linear-gradient(135deg, #ff6b35, #f7931e);
   color: white;
   padding: 1rem;
@@ -222,7 +151,7 @@
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   border-radius: 0.625rem;
-  width:90%;
+  width:100%;
 }
 
 .player-content {

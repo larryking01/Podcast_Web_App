@@ -13,11 +13,23 @@
 }
 
 
+.audio-container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+
 
 
 
 @media (max-width: 600px) {
     .page-header {
         padding: 1rem 60px 3rem 60px;
+    }
+
+    .audio-container-div {
+        margin-top: 2rem;
     }
 }
