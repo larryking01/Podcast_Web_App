@@ -34,7 +34,7 @@ This is a web application designed to manage and display podcast-related content
 
 ## Screenshots
 
-### Admin Dashboard
+### Home screen
 
 ![Admin Dashboard](/screenshots/1.png)
 
