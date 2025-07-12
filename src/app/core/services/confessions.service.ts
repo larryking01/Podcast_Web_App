@@ -31,7 +31,6 @@ export class ConfessionsService {
     }
 
     return this.http.get<AdminConfessionResponse>(`${this.baseUrl}/v1/confessions`, { params })
-
       .pipe(
         catchError(this.errorHandler.handle)
       );
