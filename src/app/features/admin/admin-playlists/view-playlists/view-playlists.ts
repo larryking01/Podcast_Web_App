@@ -4,11 +4,11 @@ import { RouterLink, RouterModule } from '@angular/router'; // Import RouterModu
 import { PlaylistsService } from '../../../../core/services/playlists.service';
 import { Playlist, PlaylistsResponse } from '../../../../core/models/playlists.interface';
 import { AdminNavbar } from '../../../../shared/components/admin-navbar/admin-navbar';
-AdminNavbar
+import { AdminSidebar } from '../../../../shared/components/admin-sidebar/admin-sidebar';
 @Component({
   selector: 'app-view-playlists',
   standalone: true,
-  imports: [CommonModule, AdminNavbar, RouterModule], // Add RouterModule and corrected AdminNavbarComponent
+  imports: [CommonModule, AdminNavbar, RouterModule, AdminSidebar], // Add RouterModule and corrected AdminNavbarComponent
   templateUrl: './view-playlists.html',
   styleUrls: ['./view-playlists.scss']
 })

@@ -1,3 +1,15 @@
+.main {
+   display: flex;
+   width: 100%; 
+}
+// .sidebar-container {
+//    width: 250px;
+  
+// }
+.admin-main{
+  flex: 1;
+}
+
 .confessions-section {
   padding: 3rem 1rem;
   background: linear-gradient(to right, #f7f9fc20, #eef3fc);

@@ -7,7 +7,7 @@ import { AdminSidebar } from '../../../shared/components/admin-sidebar/admin-sid
 @Component({
   selector: 'app-admin-confessions',
   standalone: true,
-  imports: [AdminNavbar, CommonModule],
+  imports: [AdminNavbar, CommonModule, AdminSidebar],
   templateUrl: './admin-confessions.html',
   styleUrl: './admin-confessions.scss'
 })
