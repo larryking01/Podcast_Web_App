@@ -5,7 +5,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Welcome to Podcat</h1>
-            <p>Your favorite podcast destination with amazing stories, insightful conversations, and engaging content.</p>
+            <p class="home-page-subtitle">Your favorite podcast destination with amazing stories, insightful conversations, and engaging content.</p>
             <div class="hero-buttons">
                 <!-- <button class="btn btn-secondary">Listen Now</button> -->
                 <button class="btn btn-primary" routerLink="/episodes">Browse Episodes</button>
@@ -76,7 +76,6 @@
                     @for( playlist of playlistsArray; track playlist.id ) {
                         <div class="playlist-card">
                             <div class="playlist-cover">
-                                <!-- <img [src]="playlist.name" alt="Playlist"> -->
                                 <div class="playlist-overlay">
                                     <button class="btn btn-play-large">▶</button>
                                 </div>

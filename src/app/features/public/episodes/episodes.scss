@@ -1,7 +1,16 @@
+article {
+    background-color: var(--page-default-bg);
+}
+
+
+section {
+    background-color: var(--page-default-bg);
+}
+
 
 .filters-section {
     padding: 2rem 0;
-    background: #f8f9fa;
+
 }
 
 .filters-container {
@@ -19,10 +28,12 @@
 
 .search-input {
     padding: 12px 50px 12px 16px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--element-border-col);
     border-radius: 25px;
     font-size: 1rem;
     min-width: 600px;
+    background-color: var(--element-bg);
+    color: var(--item-body-font-col);
 }
 
 .search-btn {
@@ -50,11 +61,11 @@
 
 .episode-item {
     display: flex;
-    background: white;
+    background: var(--element-bg);
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--element-border-col);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -85,7 +96,7 @@
 
 .episode-header h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: var(--item-title-font-col);
     margin: 0;
 }
 
@@ -105,7 +116,7 @@
 }
 
 .episode-description {
-    color: #666;
+    color: var(--item-body-font-col);
     line-height: 1.6;
     margin-bottom: 1rem;
 }

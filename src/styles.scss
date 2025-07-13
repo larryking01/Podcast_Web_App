@@ -115,13 +115,6 @@ body {
     background-color: #f8f9fa;
 }
 
-.section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #333;
-}
-
 
 
 /* Responsive Design */
@@ -337,6 +330,8 @@ body.dark-theme app-admin-dashboard .section-header h2 {
     --element-bg: white;
     --page-default-bg: rgba(255, 255, 255, 0.95);
     --navbar-border-bottom-col: #e0e0e0;
+    --element-border-col: #e0e0e0;
+
 
     /* fonts */
     --hero-section-font-col: #fff;
@@ -344,6 +339,7 @@ body.dark-theme app-admin-dashboard .section-header h2 {
     --item-body-font-col: #666;
     --item-meta-data-font-col: #888;
     --section-title-font-col: #333;
+    --form-error-text-color: red;
 
 }
 
@@ -351,18 +347,20 @@ body.dark-theme app-admin-dashboard .section-header h2 {
 
 body.dark-mode {
     /* color palette */
-    --primary-theme-bg: #202C36;
-    --secondary-theme-bg: #2f3c49;
+    --primary-theme-bg: #000;
+    --secondary-theme-bg: #202C36;
     --element-bg: #2B3844;
     --page-default-bg: #000;
     --navbar-border-bottom-col: #2f3c49;
+    --element-border-col: #000;
 
     /* fonts */
     --hero-section-font-col: #fff;
     --item-title-font-col: #E0E0E0;
-    --item-body-font-col: 	#F1F1F1;
+    --item-body-font-col: 	#CCCCCC;
     --item-meta-data-font-col: #fff;
     --section-title-font-col: #fff;
+    --form-error-text-color: #ff6b35;
 }
 
 

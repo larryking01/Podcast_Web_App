@@ -1,4 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Footer } from '../../../shared/components/footer/footer';
@@ -11,6 +12,7 @@ import { AudioPlayer } from '../../../core/services/audio-player';
 // import { AsyncPipe } from '@angular/common';
 import { PageHeader } from '../../../shared/components/page-header/page-header';
 import { RouterModule } from '@angular/router';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-episodes',
@@ -31,19 +33,20 @@ export class Episodes implements OnInit {
   }
 
   episodeService = inject( EpisodesService )
-
   router = inject( Router )
-
   audioPlayer = inject( AudioPlayer )
+  destroyRef = inject( DestroyRef )
 
-  episodesArray: Episode[] = []         // all episodes from API
-  paginatedEpisodes: Episode [] = []   // current page items
+  episodesArray: Episode[] = []         
+  paginatedEpisodes: Episode [] = []   
 
   pageSize = 5
   currentPage = 0
 
   ngOnInit(): void {
-    this.episodeService.getEpisodes().subscribe({
+    this.episodeService.getEpisodes()
+    .pipe( takeUntilDestroyed( this.destroyRef ))
+    .subscribe({
       next: ( episode: EpisodeResponse ) => {
         this.episodes$ = episode
         console.log("episodes loaded = ", this.episodes$ )

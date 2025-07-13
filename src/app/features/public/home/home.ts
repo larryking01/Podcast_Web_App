@@ -1,4 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Footer } from '../../../shared/components/footer/footer';
 import { RouterModule } from '@angular/router';
@@ -30,6 +31,9 @@ export class Home implements OnInit {
   teamMembersArray: TeamMember[] = []
 
 
+  destroyRef = inject( DestroyRef )
+
+
 
 
 
@@ -43,7 +47,9 @@ export class Home implements OnInit {
 
 
   getRecentEpisodes() {
-    this.episodesService.getEpisodes().subscribe({
+    this.episodesService.getEpisodes()
+    .pipe( takeUntilDestroyed( this.destroyRef ))
+    .subscribe({
       next: ( episodeResponse ) => {
         this.episodesArray = episodeResponse.data
         console.log("all episodes fetched = ", this.episodesArray)
@@ -61,7 +67,9 @@ export class Home implements OnInit {
 
 
   getFewPlayLists() {
-    this.playListsService.getAllPlaylists().subscribe({
+    this.playListsService.getAllPlaylists()
+    .pipe( takeUntilDestroyed( this.destroyRef ))
+    .subscribe({
       next: ( playListsResponse ) => {
         console.log("play lists response = ", playListsResponse )
         this.playlistsArray = playListsResponse.data.data
@@ -72,7 +80,9 @@ export class Home implements OnInit {
 
 
   getTeamMembers() {
-    this.teamMembers.getAllTeamMembers().subscribe({
+    this.teamMembers.getAllTeamMembers()
+    .pipe( takeUntilDestroyed( this.destroyRef ))
+    .subscribe({
       next: ( teamMembersResponse ) => {
         console.log( "team members fetched = ", teamMembersResponse )
         this.teamMembersArray = teamMembersResponse.data
