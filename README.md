@@ -63,7 +63,7 @@ This is a web application designed to manage and display podcast-related content
 
 1.  Clone the repository:
     ```bash
-    git clone [repository-url]
+    git clone https://github.com/larryking01/Podcast_Web_App
     cd podcast-web-app
     ```
 2.  Install dependencies:
