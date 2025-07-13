@@ -1,3 +1,4 @@
+@use './app/shared/styles/_reusables' as *;
 
 @use '@angular/material' as mat;
 
@@ -11,8 +12,10 @@ html {
     typography: Roboto,
     density: 0,
   ));
-}/* You can add global styles to this file, and also import other style files */
-/* Reset and Base Styles */
+}
+
+
+/* Resets and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +28,7 @@ body {
     color: #333;
     background-color: #fff;
     transition: all 0.3s ease;
+    // background-color: green;
 }
 
 
@@ -156,6 +160,8 @@ body {
     .theme-toggle:hover {
         background-color: #f0f0f0;
     }
+
+
     /* Dark Theme Styles */
     body.dark-theme {
         background-color: #1a1a1a; /* Dark background */
@@ -250,19 +256,7 @@ body {
 }
 
 
-@media (max-width: 480px) {
-    .container {
-        padding: 0 15px;
-    }
-            
-    .section {
-        padding: 60px 0;
-    }
-    
-    .section h2 {
-        font-size: 2rem;
-    }
-}
+
 /* Dark Theme Styles */
 body.dark-theme {
     background-color: #1a1a1a; /* Dark background */
@@ -315,3 +309,60 @@ body.dark-theme .section-header h2 {
 body.dark-theme app-admin-dashboard .section-header h2 {
     color: #f0f0f0; /* White color for h2 in dark mode */
 }
+
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+            
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
+/* theme styles for public routes. */
+:root {
+    /* color palette */
+    --primary-theme-bg: #ff6b35;
+    --secondary-theme-bg: #f7931e;
+    --element-bg: white;
+    --page-default-bg: rgba(255, 255, 255, 0.95);
+    --navbar-border-bottom-col: #e0e0e0;
+
+    /* fonts */
+    --hero-section-font-col: #fff;
+    --item-title-font-col: #333;
+    --item-body-font-col: #666;
+    --item-meta-data-font-col: #888;
+    --section-title-font-col: #333;
+
+}
+
+
+
+body.dark-mode {
+    /* color palette */
+    --primary-theme-bg: #202C36;
+    --secondary-theme-bg: #2f3c49;
+    --element-bg: #2B3844;
+    --page-default-bg: #000;
+    --navbar-border-bottom-col: #2f3c49;
+
+    /* fonts */
+    --hero-section-font-col: #fff;
+    --item-title-font-col: #E0E0E0;
+    --item-body-font-col: 	#F1F1F1;
+    --item-meta-data-font-col: #fff;
+    --section-title-font-col: #fff;
+}
+
+

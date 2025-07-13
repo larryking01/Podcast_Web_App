@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    background: linear-gradient(135deg, var(--primary-theme-bg), var(--secondary-theme-bg));
     color: white;
     padding: 3rem 0;
     text-align: center;
@@ -37,6 +37,10 @@
 }
 
 
+section {
+    background-color: var(--page-default-bg);
+}
+
 /* Episodes Grid */
 .episodes-grid {
     display: grid;
@@ -45,7 +49,7 @@
 }
 
 .episode-card {
-    background: white;
+    background: var(--element-bg);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -187,7 +191,7 @@
 }
 
 .team-member {
-    background: white;
+    background: var(--element-bg);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -299,13 +303,8 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #ff6b35;
-    // border-radius: 50%;
 }
 
-
-// svg {
-//     border-radius: 100%;
-// }
 
 .stat-label {
     font-size: 0.9rem;
