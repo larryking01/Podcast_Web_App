@@ -41,7 +41,10 @@ export class AdminLogin {
         response => {
 
           //successful login response handling
+          const expiresAt = Date.now() + 60 * 60 * 1000; // 1 hour in milliseconds
+
           localStorage.setItem('token', response.data.token); // Store token in localStorage
+          localStorage.setItem('auth_token_expires_at', expiresAt.toString());
           localStorage.setItem('currentUser', JSON.stringify(response.data.user)); //user data
 
           this.router.navigate(['/admin/dashboard']);
