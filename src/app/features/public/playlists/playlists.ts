@@ -1,10 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Footer } from '../../../shared/components/footer/footer';
 import { PageHeader } from '../../../shared/components/page-header/page-header';
 import { PlaylistsService } from '../../../core/services/playlists.service';
 import { Playlist } from '../../../core/models/playlists.interface';
-import { PlaylistResponse } from '../../../core/models/playlists.interface';
 import { Router } from '@angular/router';
 
 
@@ -19,6 +19,7 @@ export class Playlists implements OnInit {
   playListsService = inject( PlaylistsService )
   playListsArray: Playlist[] = []
   router = inject( Router )
+  destroyRef = inject( DestroyRef )
 
 
   playListsBackground = [
@@ -43,6 +44,7 @@ export class Playlists implements OnInit {
 
   getAllPlaylists() {
     this.playListsService.getAllPlaylists()
+    .pipe( takeUntilDestroyed( this.destroyRef ))
     .subscribe({
       next: ( playListsResponse ) => {
         console.log("playlists fetched = ", playListsResponse )
@@ -57,9 +59,5 @@ export class Playlists implements OnInit {
   navigateToEpisodeDetails(episodeID: number) {
     this.router.navigate(['/episodes', episodeID])
   }
-
-
-
-
 
 }

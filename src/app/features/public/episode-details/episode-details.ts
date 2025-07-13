@@ -1,4 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Footer } from '../../../shared/components/footer/footer';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { EpisodesService } from '../../../core/services/episodes.service';
@@ -20,10 +21,11 @@ export class EpisodeDetails implements OnInit {
 
   episodesService = inject( EpisodesService )
   activatedRoute = inject( ActivatedRoute )
+  audioPlayerService = inject(AudioPlayer)
+  destroyRef = inject( DestroyRef )
   selectedEpisodeID: string | null = null
   selectedEpisode: Episode | undefined = undefined
 
-  audioPlayerService = inject(AudioPlayer)
 
 
   episodes$: EpisodeResponse = {
@@ -44,6 +46,7 @@ export class EpisodeDetails implements OnInit {
     this.selectedEpisodeID = this.activatedRoute.snapshot.paramMap.get('id')
     if( this.selectedEpisodeID ) {
       this.episodesService.getEpisodeByID( Number.parseInt(this.selectedEpisodeID) )
+      .pipe( takeUntilDestroyed( this.destroyRef ))
       .subscribe({
         next: (( selectedEpisode ) => {
           this.selectedEpisode = selectedEpisode
@@ -63,7 +66,5 @@ export class EpisodeDetails implements OnInit {
   onPlayClick( episode: Episode ) {
     this.audioPlayerService.play( episode.audio_url, episode.title )
   }
-
-
 
 }

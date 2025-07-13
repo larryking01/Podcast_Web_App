@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ThemesService } from '../../../core/services/themes-service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,24 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })
-export class Navbar {
+export class Navbar implements OnInit {
+
+  themeService = inject( ThemesService )
+
+  ngOnInit(): void {
+    
+  }
+
+
+  setToDarkTheme() {
+    this.themeService.setDarkMode()
+  }
+
+
+  setToLightTheme() {
+    this.themeService.setLightMode()
+  }
+
+
 
 }

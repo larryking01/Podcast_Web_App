@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// import { AudioPlayerComponent } from "./shared/components/audio-player-component/audio-player-component";
-
+import { ThemesService } from './core/services/themes-service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +10,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected title = 'Podcast_Web_App';
+
+  constructor(private themeService: ThemesService ) {
+    this.themeService.initializeTheme()
+  }
+  
+
 }

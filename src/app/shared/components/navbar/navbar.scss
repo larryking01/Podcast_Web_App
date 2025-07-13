@@ -3,9 +3,9 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--page-default-bg);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--navbar-border-bottom-col);
     z-index: 1000;
     padding: 1rem 0;
 }
@@ -33,7 +33,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color: var(--item-title-font-col);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;

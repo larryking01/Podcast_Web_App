@@ -23,6 +23,12 @@
                 <a routerLink="/admin/login" class="nav-link">Admin</a>
             </li>
         </ul>
-        <button class="theme-toggle">🌙</button>
+
+        @if( !themeService.isDarkMode ) {
+            <button class="theme-toggle" (click)="setToDarkTheme()">🌙</button>
+        }
+        @else {
+            <button class="theme-toggle" (click)="setToLightTheme()" >☀️</button>
+        }
     </div>
 </nav>
