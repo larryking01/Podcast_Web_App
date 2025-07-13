@@ -14,9 +14,11 @@ export class ThemesService {
     let preferredTheme = localStorage.getItem("theme-class")
     if( preferredTheme ) {
       document.body.classList.toggle("dark-mode", true)
+      this.isDarkMode = true
     }
     else {
       document.body.classList.toggle("dark-theme", false)
+      this.isDarkMode = false
     }
   }
 
