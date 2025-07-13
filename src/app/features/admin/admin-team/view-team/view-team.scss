@@ -5,6 +5,29 @@
   font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
+.main {
+  display: flex;
+ 
+}
+.sidebar-content {
+  width: 250px;
+
+  @media (max-width: 768px) {
+    width: 0px;
+   
+    
+  }
+}
+.team{
+  flex: 1;
+
+  @media (max-width: 768px) {
+    margin-left: 50px;
+    
+    
+  }
+}
+
 
 h2{
   text-align: center;
@@ -42,6 +65,7 @@ h2{
 
 /* Grid Layout */
 .team-grid {
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;

@@ -1,9 +1,30 @@
+.main {
+  display: flex;
+}
+
+.sidebar-container{
+  width: 250px;
+
+  @media (max-width: 768px) {
+    width: 0px;
+    
+    
+  }
+}
+
 .playlist-list-container {
+  width: 100%;
   max-width: 1100px;
   margin: 2rem auto;
   padding: 1rem;
   font-family: 'Segoe UI', Roboto, sans-serif;
   margin-top: 100px;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    margin-left: 50px;
+  }
+  
 }
 
 .header {
