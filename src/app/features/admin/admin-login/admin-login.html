@@ -1,9 +1,7 @@
 <article>
-    <!-- Navigation -->
      <app-navbar />
 
 
-    <!-- Login Section -->
     <section class="login-section">
         <div class="container">
             <div class="login-container">
@@ -32,11 +30,11 @@
                                 </button>
                             </div>
                             <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error-message">
-                                <small style="color: red;" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
-                                <small style="color: red;" *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+                                <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+                                <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
                             </div>
-                           <p *ngIf="logginInProgress">loggin...</p>
-                            <p *ngIf="correctCredentials" style="color: red;">Incorrect credentials, try again</p>
+                           <p *ngIf="logginInProgress" class="try-again-text">logging in...</p>
+                           <p *ngIf="correctCredentials" class="try-again-text">Incorrect credentials, try again</p>
                         </div>
 
                         <div class="form-options">
@@ -56,66 +54,11 @@
                     </div>
                 </div>
 
-                <!-- <div class="login-info">
-                    <h2>Admin Dashboard</h2>
-                    <p>Access powerful tools to manage your podcast content:</p>
-                    
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <div class="feature-icon">📊</div>
-                            <div class="feature-content">
-                                <h3>Analytics Dashboard</h3>
-                                <p>Track episode performance, listener engagement, and growth metrics</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item">
-                            <div class="feature-icon">🎙️</div>
-                            <div class="feature-content">
-                                <h3>Episode Management</h3>
-                                <p>Upload, edit, and schedule podcast episodes with full metadata control</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item">
-                            <div class="feature-icon">📝</div>
-                            <div class="feature-content">
-                                <h3>Content Moderation</h3>
-                                <p>Review and moderate user-submitted confessions and comments</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item">
-                            <div class="feature-icon">👥</div>
-                            <div class="feature-content">
-                                <h3>Team Management</h3>
-                                <p>Manage team member profiles, roles, and permissions</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item">
-                            <div class="feature-icon">🎵</div>
-                            <div class="feature-content">
-                                <h3>Playlist Curation</h3>
-                                <p>Create and manage playlists to organize content by themes</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item">
-                            <div class="feature-icon">⚙️</div>
-                            <div class="feature-content">
-                                <h3>Settings & Configuration</h3>
-                                <p>Customize site appearance, SEO settings, and integration options</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
 
 
-    <!-- Security Notice -->
     <section class="security-section">
         <div class="container">
             <div class="security-notice">
@@ -125,7 +68,5 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <app-footer />
-
 </article>

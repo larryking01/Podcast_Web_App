@@ -6,39 +6,6 @@
         [subTitle]="'Handpicked collections to match your mood, moment, or curiosity.'" />
 
 
-    <!-- Featured Playlists -->
-    <!-- <section class="section">
-        <div class="container">
-            <h2>Featured Playlists</h2>
-            <div class="playlists-featured">
-                <div class="playlist-featured">
-                    <div class="playlist-cover-large">
-                        <img src="https://via.placeholder.com/400x400" alt="Tech Talks">
-                        <div class="playlist-overlay">
-                            <button class="btn-play-featured">▶</button>
-                        </div>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>Tech Talks</h3>
-                        <p class="playlist-description">Dive deep into the world of technology with our curated selection of tech-focused episodes featuring industry experts, innovators, and thought leaders.</p>
-                        <div class="playlist-stats">
-                            <span>8 episodes</span>
-                            <span>•</span>
-                            <span>6h 20m total</span>
-                            <span>•</span>
-                            <span>12.5K plays</span>
-                        </div>
-                        <div class="playlist-actions">
-                            <button class="btn btn-primary">▶ Play All</button>
-                            <button class="btn btn-secondary">📱 Download</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
     <!-- All Playlists -->
     <section class="section bg-light">
         <div class="container">
@@ -59,11 +26,11 @@
                         <p>{{ playlist.description }}</p>
                         <div class="playlist-meta">
                             <span class="episode-count">{{ playlist.episodes?.length}} episode(s)</span>
-                            <span>•</span>
+                            <!-- <span>•</span> -->
 
-                            <div class="playlist-duration">
+                            <!-- <div class="playlist-duration">
                                 <span>12h 30m</span>
-                            </div>
+                            </div> -->
                         </div>
                         @for( episode of playlist.episodes; track episode.id ) {
                             <div class="playlist-actions">

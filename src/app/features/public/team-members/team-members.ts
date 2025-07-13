@@ -1,4 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Footer } from '../../../shared/components/footer/footer';
 import { PageHeader } from '../../../shared/components/page-header/page-header';
@@ -18,6 +19,8 @@ export class TeamMembers implements OnInit {
   teamMembersService = inject( TeamMembersService )
   teamMembersArray: TeamMember[] = []
   studioImageUrl: string = ''
+  destroyRef = inject( DestroyRef )
+
 
   studioImages = [
     { imageUrl: "https://media.istockphoto.com/id/1451776362/photo/microphone-in-a-professional-recording-or-radio-studio.jpg?s=612x612&w=0&k=20&c=r_mAh9ELEAgiTbqhxR7l2s7J-lJybFEm4Cweydg3bUg="},
@@ -28,6 +31,7 @@ export class TeamMembers implements OnInit {
 
   ngOnInit(): void {
     this.teamMembersService.getAllTeamMembers()
+    .pipe( takeUntilDestroyed( this.destroyRef ))
     .subscribe({
       next: ( teamMembersListResponse ) => {
         this.teamMembersArray = teamMembersListResponse.data
@@ -35,16 +39,10 @@ export class TeamMembers implements OnInit {
       }
     })
 
-    this.getStudioImage()
-  }
 
-
-  getStudioImage() {
-    this.studioImageUrl = this.studioImages[Math.ceil(Math.random() * this.studioImages.length )].imageUrl
-    return this.studioImageUrl
+    let index = Math.floor(Math.random() * this.studioImages.length)
+    this.studioImageUrl = this.studioImages[index].imageUrl
 
   }
-
-
 
 }

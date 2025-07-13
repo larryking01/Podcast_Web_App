@@ -1,10 +1,12 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Navbar } from '../../../shared/components/navbar/navbar';
 import { Footer } from '../../../shared/components/footer/footer';
 import { ConfessionsService } from '../../../core/services/confessions.service';
 import { AddConfessionRequest, ConfessionResponse } from '../../../core/models/confession.interface';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PageHeader } from '../../../shared/components/page-header/page-header';
+
 
 
 @Component({
@@ -16,6 +18,8 @@ import { PageHeader } from '../../../shared/components/page-header/page-header';
 export class Confessions {
 
   confessionsService = inject( ConfessionsService )
+
+  destroyRef = inject( DestroyRef )
 
   confessionCategories = [
     'Funny',
@@ -68,7 +72,9 @@ export class Confessions {
       }
 
       // add the confession
-      this.confessionsService.addConfession( newConfession ).subscribe({
+      this.confessionsService.addConfession( newConfession )
+      .pipe( takeUntilDestroyed( this.destroyRef ))
+      .subscribe({
         next: ( confession: ConfessionResponse ) => {
           console.log('confession added: ', confession )
           alert('confession added')

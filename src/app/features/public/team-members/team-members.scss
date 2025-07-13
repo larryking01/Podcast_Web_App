@@ -1,3 +1,11 @@
+article {
+    background-color: var(--page-default-bg);
+}
+
+section {
+    background-color: var(--page-default-bg);
+}
+
 
 .team-intro {
     text-align: center;
@@ -5,16 +13,16 @@
     margin: 0 auto;
 }
 
-.team-intro h2 {
+h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #333;
+    color: var(--item-title-font-col);
 }
 
-.team-intro p {
+p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #666;
+    color: var(--item-body-font-col);
 }
 
 .team-grid {
@@ -25,12 +33,12 @@
 }
 
 .team-member {
-    background: white;
+    background-color: var(--element-bg);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--element-border-col);
 }
 
 .team-member:hover {
@@ -100,10 +108,10 @@
     padding: 2rem;
 }
 
-.member-info h3 {
+h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: var(--item-title-font-col);
 }
 
 .member-role {
@@ -114,7 +122,7 @@
 }
 
 .member-bio {
-    color: #666;
+    color: var(--item-body-font-col);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -153,7 +161,7 @@
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #333;
+    color: var(--item-title-font-col);
 }
 
 .behind-content {
@@ -166,13 +174,13 @@
 .behind-text h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: var(--item-title-font-col);
 }
 
 .behind-text p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #666;
+    color: var(--item-body-font-col);
     margin-bottom: 2rem;
 }
 
@@ -184,7 +192,7 @@
 .team-values li {
     padding: 0.8rem 0;
     font-size: 1.1rem;
-    color: #333;
+    color: var(--item-body-font-col);
     border-bottom: 1px solid #f0f0f0;
 }
 

@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    background: linear-gradient(135deg, var(--primary-theme-bg), var(--secondary-theme-bg));
     color: white;
     padding: 3rem 0;
     text-align: center;
@@ -37,6 +37,30 @@
 }
 
 
+section {
+    background-color: var(--page-default-bg);
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--item-title-font-col);
+}
+
+
+h3 {
+    color: var(--item-title-font-col) !important;
+}
+
+
+p {
+    color: var(--item-body-font-col) !important;
+}
+
+
+
 /* Episodes Grid */
 .episodes-grid {
     display: grid;
@@ -45,7 +69,7 @@
 }
 
 .episode-card {
-    background: white;
+    background: var(--element-bg);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -71,17 +95,10 @@
 .episode-content h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
-    color: #333;
 }
 
-.episode-host {
-    color: #ff6b35;
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-}
 
 .episode-description {
-    color: #666;
     margin-bottom: 1rem;
     line-height: 1.5;
 }
@@ -104,7 +121,6 @@
 }
 
 .playlist-card {
-    // background: white;
     background-color: #ff6b35;
     border-radius: 15px;
     padding: 1.5rem;
@@ -152,11 +168,11 @@
 .playlist-card h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #333 !important;
 }
 
 .playlist-card p {
-    // color: #666;
+    color: #000 !important;
     font-size: 0.9rem;
 }
 
@@ -170,7 +186,7 @@
 .team-intro h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #333;
+    color: var(--item-title-font-col);
 }
 
 .team-intro p {
@@ -187,7 +203,7 @@
 }
 
 .team-member {
-    background: white;
+    background: var(--element-bg);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -265,11 +281,10 @@
 .member-info h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #333;
 }
 
 .member-role {
-    color: #ff6b35;
+    color: #ff6b35 !important;
     font-weight: 600;
     margin-bottom: 1rem;
     font-size: 1rem;
@@ -299,13 +314,8 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #ff6b35;
-    // border-radius: 50%;
 }
 
-
-// svg {
-//     border-radius: 100%;
-// }
 
 .stat-label {
     font-size: 0.9rem;
@@ -362,7 +372,6 @@ a:hover {
     }
 
     .audio-player-div {
-    // background-color: red;
     padding: 3rem 4rem 0 4rem;
     
     }
@@ -388,7 +397,6 @@ a:hover {
     }
 
     .audio-player-div {
-    // background-color: red;
         padding: 3rem 4rem 0 4rem;
     
     }
