@@ -3,10 +3,11 @@ import { TeamMember } from '../../../../core/models/team-members.interface';
 import { TeamMembersService } from '../../../../core/services/team-members.service';
 import { CommonModule } from '@angular/common';
 import { AdminNavbar } from '../../../../shared/components/admin-navbar/admin-navbar';
+import { AdminSidebar } from '../../../../shared/components/admin-sidebar/admin-sidebar';
 import { RouterLink } from '@angular/router'; // Import RouterLink for navigation
 @Component({
   selector: 'app-view-team',
-  imports: [CommonModule, AdminNavbar, RouterLink],
+  imports: [CommonModule, AdminNavbar, RouterLink, AdminSidebar],
   templateUrl: './view-team.html',
   styleUrl: './view-team.scss'
 })

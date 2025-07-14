@@ -16,11 +16,23 @@ export class TokenInterceptor implements HttpInterceptor {
     const token = localStorage.getItem('token');
 
     if (token) {
+      const expiresAt = parseInt(localStorage.getItem('auth_token_expires_at') || '0');
+
+      if (!token || Date.now() > expiresAt) {
+
+        // Token has expired — remove it
+        localStorage.removeItem('token');
+        localStorage.removeItem('auth_token_expires_at');
+   
+  }
+
       const cloned = req.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`
         }
       });
+
+
       return next.handle(cloned);
     }
 
