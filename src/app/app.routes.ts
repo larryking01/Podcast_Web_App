@@ -17,12 +17,12 @@ export const routes: Routes = [
         component: AdminLogin,
         title: 'Admin Login'
     }, 
-        {
-            path: 'admin/dashboard',
-            loadComponent: () => import('./features/admin/admin-dashboard/admin-dashboard').then( m => m.AdminDashboard ),
-            title: 'Admin dashboard',
-            canActivate: [authGuard]
-        },
+    {
+        path: 'admin/dashboard',
+        loadComponent: () => import('./features/admin/admin-dashboard/admin-dashboard').then( m => m.AdminDashboard ),
+        title: 'Admin dashboard',
+        canActivate: [authGuard]
+    },
     {
         path: 'admin/confessions',
         loadComponent: () => import('./features/admin/admin-confessions/admin-confessions').then( m => m.AdminConfessions ),
