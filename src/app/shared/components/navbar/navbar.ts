@@ -65,12 +65,6 @@ export class Navbar implements OnInit {
     this.showSidebar = false
   }
 
-  // toggleSidebarVisibility() {
-  //   this.showHamburgerButton = !this.showHamburgerButton
-  //   this.showCloseButton = !this.showCloseButton
-  //   this.showSidebar = !this.showSidebar
-  // }
-
 
   setToDarkTheme() {
     this.themeService.setDarkMode()

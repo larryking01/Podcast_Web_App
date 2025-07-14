@@ -71,17 +71,14 @@ export class Confessions {
         emotion: this.confessionForm.value.emotion as string
       }
 
-      // add the confession
       this.confessionsService.addConfession( newConfession )
       .pipe( takeUntilDestroyed( this.destroyRef ))
       .subscribe({
         next: ( confession: ConfessionResponse ) => {
-          console.log('confession added: ', confession )
           alert('confession added')
           this.confessionForm.reset()
         },
         error: ( error ) => {
-          console.log('error adding confession: ', error)
           alert('error while adding confession, try again')
         }
       })

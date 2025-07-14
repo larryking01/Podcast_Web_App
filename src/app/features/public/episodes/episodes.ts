@@ -8,11 +8,10 @@ import { EpisodesService } from '../../../core/services/episodes.service';
 import { Episode } from '../../../core/models/episodes.interface';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { AudioPlayer } from '../../../core/services/audio-player';
-// import { AudioPlayerComponent } from '../../../shared/components/audio-player-component/audio-player-component';
-// import { AsyncPipe } from '@angular/common';
 import { PageHeader } from '../../../shared/components/page-header/page-header';
 import { RouterModule } from '@angular/router';
-import { take } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-episodes',
@@ -49,7 +48,6 @@ export class Episodes implements OnInit {
     .subscribe({
       next: ( episode: EpisodeResponse ) => {
         this.episodes$ = episode
-        console.log("episodes loaded = ", this.episodes$ )
         this.episodesArray = episode.data
         this.updatePaginatedEpisodes()
       }

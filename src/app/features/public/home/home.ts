@@ -52,7 +52,6 @@ export class Home implements OnInit {
     .subscribe({
       next: ( episodeResponse ) => {
         this.episodesArray = episodeResponse.data
-        console.log("all episodes fetched = ", this.episodesArray)
         this.latestEpisodes = [ ...this.episodesArray ]
         .sort((a,b) => {
           const dateA = new Date(a.posted_on?? 0).getTime()
@@ -60,7 +59,6 @@ export class Home implements OnInit {
           return dateB - dateA
         } )
           .slice(0, 5)
-          console.log("latest episodes = ", this.latestEpisodes)
       }
     })
   }
@@ -71,9 +69,7 @@ export class Home implements OnInit {
     .pipe( takeUntilDestroyed( this.destroyRef ))
     .subscribe({
       next: ( playListsResponse ) => {
-        console.log("play lists response = ", playListsResponse )
         this.playlistsArray = playListsResponse.data.data
-        console.log("play lists array = ", this.playlistsArray )
       }
     })
   }
@@ -84,9 +80,7 @@ export class Home implements OnInit {
     .pipe( takeUntilDestroyed( this.destroyRef ))
     .subscribe({
       next: ( teamMembersResponse ) => {
-        console.log( "team members fetched = ", teamMembersResponse )
         this.teamMembersArray = teamMembersResponse.data
-        console.log("team members array = ", this.teamMembersArray )
       }
     })
   }

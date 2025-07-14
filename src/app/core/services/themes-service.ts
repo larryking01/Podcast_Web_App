@@ -24,13 +24,11 @@ export class ThemesService {
 
   setLightMode() {
     this.isDarkMode = document.body.classList.toggle("dark-mode", false)
-    console.log("dark status = ", this.isDarkMode )
     localStorage.removeItem("theme-class")
   }
 
   setDarkMode() {
     this.isDarkMode = document.body.classList.toggle("dark-mode", true)
-    console.log("dark status = ", this.isDarkMode )
     localStorage.setItem("theme-class", "dark-mode")
 
   }

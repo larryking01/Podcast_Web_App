@@ -50,13 +50,11 @@ export class EpisodeDetails implements OnInit {
       .subscribe({
         next: (( selectedEpisode ) => {
           this.selectedEpisode = selectedEpisode
-          console.log('selected episode = ', this.selectedEpisode )
         }),
         error: (( error ) => console.log('error fetching episode details = ', error))
       })
     }
     else {
-      // display error banner here.
       alert('Failed to fetch episode details')
     }
 

@@ -35,10 +35,8 @@ export class TeamMembers implements OnInit {
     .subscribe({
       next: ( teamMembersListResponse ) => {
         this.teamMembersArray = teamMembersListResponse.data
-        console.log("team members fetched = ", this.teamMembersArray)
       }
     })
-
 
     let index = Math.floor(Math.random() * this.studioImages.length)
     this.studioImageUrl = this.studioImages[index].imageUrl
