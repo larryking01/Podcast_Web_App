@@ -51,7 +51,7 @@ export class EpisodeDetails implements OnInit {
         next: (( selectedEpisode ) => {
           this.selectedEpisode = selectedEpisode
         }),
-        error: (( error ) => console.log('error fetching episode details = ', error))
+        error: (( error ) => console.error('error fetching episode details = ', error))
       })
     }
     else {

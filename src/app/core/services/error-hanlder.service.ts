@@ -7,7 +7,6 @@ import { throwError } from 'rxjs';
 })
 export class ErrorHanlder {
  handle(error: HttpErrorResponse) {
-    console.error('API Error:', error);
 
     if (error.status === 0) {
       return throwError(() => new Error('Network error. Please try again.'));
